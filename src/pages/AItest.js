@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import NavLogo from "../Asset/NavLogo.png"
 import { AuthContext } from "../Auth";
 import img from "../Asset/ECgg.webp"
+import gant from "../Asset/gant.png"
 
 
 
@@ -15,18 +16,7 @@ const AItest = ({ history }) => {
     const [isShown3, setIsShown3] = useState(false);
     const [data, setData] = useState([]);
     const db = app.firestore();
-
-    db.collection("EIPCA").where("userid", "==", currentUser.uid )
-    .get()
-    .then((querySnapshot) => {
-    let dataArray = [];
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id, " => ", doc.data());
-      dataArray.push(doc.data());
-    });
-      setData(dataArray);
-    })
-
+    
     
     const handleClick = event => {
       setIsShown(current => !current);
@@ -73,6 +63,7 @@ const AItest = ({ history }) => {
 
             <center>
             <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
+            <img src={gant}/> <br></br>
             {/* ////////////////////////////////////////////////////////// */}
               <div class="bg-light py-4 fs-5">
                 <text> ECG Checked 29/01/2023 </text> <br></br>
@@ -85,10 +76,11 @@ const AItest = ({ history }) => {
                 {isShown ? (
                   <div>
                   <div class="py-4">
-                    <img src={img}/> <br></br>
+                    <img src={img} class="img-fluid"/> <br></br>
                     <text>Date: Sunday 29th Jan 2023 </text> <br></br>
-                    <text>Time: 02.33 </text> <br></br>
-                    <text>Result: You heart is Healthy.</text> 
+                    <text>Time: 01.33 </text> <br></br>
+                    <text class="text-success">Result: Normal with confident of 88%</text>  <br></br>
+                    <text>Mention: หัวใจคุณปกติดี ออกกำลังกายอย่างสม่ำเสมอ และ รักษาสุขภาพร่างกาย </text> <br></br>
                   </div>
              
                   </div>
