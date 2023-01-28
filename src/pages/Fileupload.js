@@ -34,11 +34,14 @@ const handleUpload = async () => {
       return;
   }
   const db = app.firestore();
-  const fileRef = db.collection("Input").doc();
+  const fileRef = db.collection("EIPCA").doc();
   try {
       await fileRef.set({ 
         userid: currentUser.uid,
-        file: base64
+        file: base64,
+        status: "NotPredict",
+        Result: "null",
+        Time: "null"
       });
       alert("File uploaded successfully!");
       history.push("/history");
@@ -89,10 +92,14 @@ const handleUpload = async () => {
       <div class="form-group col-sm-4 col-form-label2  mb-2 my-4" >
         <label for="formFileLg" class="form-label">Please choose your file then press upload</label>
         <input class="form-control form-control-lg col-sm-2 col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
-        <img src={file}/>
+        <label> File format : JPG, PNG, JPEG only</label>
       </div>
-
-      <button class="btn btn-primary" onClick={handleUpload} disabled={!file}>Upload</button> 
+      {file && <img src={base64} class="img-thumbnail img-fluid px-3 my-4" style={{maxHeight: "50%"}}/>} <br></br>
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary px-6 mx-4" onClick={handleUpload} disabled={!file}>Upload</button> <br></br> 
+      </div>
+      
+      <div>.</div>
       
       
     </center>

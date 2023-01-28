@@ -1,51 +1,148 @@
-import * as tf from '@tensorflow/tfjs';
-import { useEffect, useState, useRef } from 'react';
+import app from "../base";
+import React, { useState , useContext } from "react";
+import { withRouter } from "react-router-dom";
+import NavLogo from "../Asset/NavLogo.png"
+import { AuthContext } from "../Auth";
+import img from "../Asset/ECgg.webp"
 
 
 
 
-const Aitest = () => {
-  const [image, setImage] = useState(null);
-  const modelRef = useRef(null);
+const AItest = ({ history }) => {
+    const { currentUser } = useContext(AuthContext);
+    const [isShown, setIsShown] = useState(false);
+    const [isShown2, setIsShown2] = useState(false);
+    const [isShown3, setIsShown3] = useState(false);
+    const [data, setData] = useState([]);
+    const db = app.firestore();
+
+    db.collection("EIPCA").where("userid", "==", currentUser.uid )
+    .get()
+    .then((querySnapshot) => {
+    let dataArray = [];
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, " => ", doc.data());
+      dataArray.push(doc.data());
+    });
+      setData(dataArray);
+    })
+
+    
+    const handleClick = event => {
+      setIsShown(current => !current);
+    };
+    const handleClick2 = event => {
+      setIsShown2(current => !current);
+    };
+    const handleClick3 = event => {
+      setIsShown3(current => !current);
+    };
   
+    return (
+        <>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+            <a class="navbar-brand" href="/" style={{marginLeft: "10px"}}>
+                <img src={NavLogo} className="img-responsive" style={{width: "50px"}} />
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-  useEffect(() => {
-    async function loadModel() {
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+       <li class="nav-item">
+                <a class="nav-link" href="./">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./upload">Upload </a>
+            </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">History <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <div style={{marginLeft: "950px"}}> User: {currentUser.email}</div>
+        </li>
+            
+      
+        </ul>
     
-    // Load your pre-trained model
-    // modelRef.current = await tf.loadLayersModel('../Asset/EIPCAECGIMGCLASS.json');
-    }
-    loadModel();
-  }, []);
+      </div>
+    </nav>
 
-  const handleFileChange = async (event) => {
-    
-    const file = event.target.files[0];
-    setImage(file);
-  }
 
-  const predict = async () => {
-    const model = await tf.loadLayersModel('../Asset/EIPCAECGIMGCLASS.h5');
-    await model.save('../Asset/EIPCAMODEL.json');
-    if (!image) {
-      return;
-    }
-    // Pre-processing image to match the model input shape
-    const imageUrl = URL.createObjectURL(image);
-    const preprocessedImage = tf.browser.fromPixels(imageUrl);
-    const resizedImage = tf.image.resizeBilinear(preprocessedImage, [224, 224]);
-    const normalizedImage = tf.div(tf.sub(resizedImage, tf.scalar(127.5)), tf.scalar(127.5));
-    // Pass the image to the model and get the prediction
-    const prediction = modelRef.current.predict(normalizedImage);
-    console.log(prediction);
-  }
+            <center>
+            <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
+            {/* ////////////////////////////////////////////////////////// */}
+              <div class="bg-light py-4 fs-5">
+                <text> ECG Checked 29/01/2023 </text> <br></br>
+                <text> Status : Finished!</text> <br></br>
+                <button onClick={()=> {
+                  handleClick();
+                }} class="btn btn-info" > Show Result</button>
 
-  return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={predict}>Predict</button>
-    </div>
-  );
-}
+                {/* 👇️ show elements on click */}
+                {isShown ? (
+                  <div>
+                  <div class="py-4">
+                    <img src={img}/> <br></br>
+                    <text>Date: Sunday 29th Jan 2023 </text> <br></br>
+                    <text>Time: 02.33 </text> <br></br>
+                    <text>Result: You heart is Healthy.</text> 
+                  </div>
+             
+                  </div>
+                ) : null}
+              </div>
+            {/* /////////////////////////////////////////////////////////////     */}
+            <div class="bg-white py-4 fs-5">
+                <text> ECG Checked 28/01/2023 </text> <br></br>
+                <text> Status : Finished!</text> <br></br>
+                <button onClick={()=> {
+                  handleClick2();
+                }} class="btn btn-info"> Show Result</button>
 
-export default Aitest;
+                {/* 👇️ show elements on click */}
+                {isShown2 ? (
+                  <div>
+                  <div class="py-4 fs-5 ">
+                    <img src={img} class="img-fluid"/> <br></br>
+                    <text>Date: Saturday 28th Jan 2023 </text> <br></br>
+                    <text>Time: 23.33 </text> <br></br>
+                    <text>Result:</text> 
+                  </div>
+             
+                  </div>
+                ) : null}
+              </div>
+            {/* ////////////////////////////////////////////////////////// */}
+              <div class="bg-light py-4 fs-5">
+                <text> ECG Checked 29/01/2023 </text> <br></br>
+                <text> Status : Finished!</text> <br></br>
+                <button onClick={()=> {
+                  handleClick3();
+                }} class="btn btn-info" > Show Result</button>
+
+                {/* 👇️ show elements on click */}
+                {isShown3 ? (
+                  <div>
+                  <div class="py-4">
+                    <img src={img}/> <br></br>
+                    <text>Date: Sunday 29th Jan 2023 </text> <br></br>
+                    <text>Time: 02.33 </text> <br></br>
+                    <text>Result: You heart is Healthy.</text> 
+                  </div>
+             
+                  </div>
+                ) : null}
+              </div>
+            </center>
+            
+        </>
+      
+    );
+  };
+
+
+  
+  export default withRouter(AItest);

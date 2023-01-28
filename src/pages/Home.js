@@ -1,6 +1,6 @@
 import React from "react";
 import app from "../base";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Auth.js";
 import { withRouter } from "react-router-dom";
 import "../App.css";
@@ -8,7 +8,7 @@ import Logo from "../Asset/Logo.png"
 import NavLogo from "../Asset/NavLogo.png"
 
 const Home = ({history}) => {
-
+  const [isHover, setIsHover] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
   const Signout = () => {
@@ -24,8 +24,21 @@ const Home = ({history}) => {
     history.push("/Login");
     window.location.reload(true)
   }
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  }
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  }
+  const btnstyle = {
+    backgroundcolor: "black"
+  };
+  
+
 
   return (
+    
     <>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
             <a class="navbar-brand" href="/" style={{marginLeft: "10px"}}>
@@ -60,8 +73,8 @@ const Home = ({history}) => {
       <div>
         {currentUser ? (
           <>
-            <div>Email: {currentUser.email}</div>
-            <div>User ID: {currentUser.uid}</div>
+            <div class = "fs-3 fw-bold">{currentUser.email}</div>
+            {/* <div>User ID: {currentUser.uid}</div> */}
             
           </>
         ) : (
@@ -70,8 +83,17 @@ const Home = ({history}) => {
           
         )}
       </div>
-      <button onClick={Signout} class="btn btn-danger my-2" >Sign out</button><br></br>
-      <button onClick={Upload} class="btn btn-success my-15"> Upload </button>
+      <a href = "#" onClick={Signout} >Sign out</a><br></br>
+          <div class="fs-5 mt-4"> Electro Cardiogram Patterns Predictions with </div> <text class="fs-5 mt-4"> Artificial Intelligence </text>
+          <div class="fs-5">ตรวจสอบกราฟคลื่นไฟฟ้าหัวใจ ด้วยปัญญาประดิษฐ์ </div>
+          <div class="d-grid gap-2 col-6 mx-auto "
+          
+          >
+          <button onClick={Upload} className="my-4 py-4 fs-3 button-64"style={btnstyle}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave} > Upload Here </button>
+          </div>
+    
       
       
     </center>
