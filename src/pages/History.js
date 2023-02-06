@@ -13,6 +13,11 @@ const History = ({ history }) => {
     const [isShown, setIsShown] = useState(false);
     const [data , setData] = useState([]);
     const db = app.firestore();
+    const Signout = () => {
+      app.auth().signOut();
+      history.push("/");
+      window.location.reload(true)
+    };
 
 
     
@@ -62,8 +67,11 @@ const History = ({ history }) => {
           <li class="nav-item active">
             <a class="nav-link" href="#">History <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
+        </li>
         <li class="nav-item ">
-          <div style={{marginLeft: "950px"}}> User: {currentUser.email}</div>
+          <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
         </li>
             
       
@@ -76,12 +84,14 @@ const History = ({ history }) => {
             <center>
             <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
             <ul>
-              {data.map((item, index) => (
-              <li key={index}>Results : {item.Result}</li>
+              {data.map((item) => (
+              <Frame 
+              Results = {item.Result}
+              Status = {item.status} 
+              Time = {item.Time}
+              />
               ))}
-              {data.map((item, index) => (
-              <li key={index}>status : {item.status}</li>
-              ))}
+             
             </ul>
           
             </center>
@@ -91,5 +101,18 @@ const History = ({ history }) => {
     );
   };
 
+const Frame = ({ Results, Status, Time}) => {
 
-  export default withRouter(History);
+    // const [Results, setReSults] = useState("");
+    // const [Status, setStatus] = useState("");
+
+    return(
+      <p>
+        <da>Results : {Results} </da> <br></br>
+        <da>Status : {Status} </da> <br></br>
+        <da>Date & Time : {Time} </da>
+      </p>
+    );
+}
+
+export default withRouter(History);

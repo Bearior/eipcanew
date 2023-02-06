@@ -9,7 +9,6 @@ import NavLogo from "../Asset/NavLogo.png"
 const FileUpload = ({history}) => {
   const { currentUser } = useContext(AuthContext);
   const [file, setFile] = useState(null);
-  const [progress, setProgress] = useState(0);
   const [base64, setBase64] = useState(null);
   
   const handleChange = (e) => {
@@ -25,6 +24,7 @@ const FileUpload = ({history}) => {
     fileReader.onload = () => {
         const base64 = fileReader.result;
         setBase64(base64);
+        console.log(base64)
     };
 };
 
@@ -56,6 +56,12 @@ const handleUpload = async () => {
     window.location.reload(true)
   }
 
+  const Signout = () => {
+    app.auth().signOut();
+    history.push("/");
+    window.location.reload(true)
+  };
+
 
 // Change file to Field for firestore
 
@@ -80,8 +86,11 @@ const handleUpload = async () => {
           <li class="nav-item active">
             <a class="nav-link" href="./history">History </a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
+        </li>
         <li class="nav-item ">
-          <div style={{marginLeft: "1000px"}}> User: {currentUser.email}</div>
+          <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
         </li>
       </ul>
     

@@ -17,7 +17,10 @@ const AItest = ({ history }) => {
     const [data, setData] = useState([]);
     const db = app.firestore();
     
-    
+    const Signout = () => {
+      app.auth().signOut();
+      window.location.reload(true)
+    };
     const handleClick = event => {
       setIsShown(current => !current);
     };
@@ -50,8 +53,11 @@ const AItest = ({ history }) => {
           <li class="nav-item active">
             <a class="nav-link" href="#">History <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
+        </li>
         <li class="nav-item ">
-          <div style={{marginLeft: "950px"}}> User: {currentUser.email}</div>
+          <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
         </li>
             
       

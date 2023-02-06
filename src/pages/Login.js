@@ -3,6 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import app from "../base.js";
 import { AuthContext } from "../Auth.js";
 import Logo from "../Asset/Logo.png"
+import "../loginpage.css"
 
 const Login = ({ history }) => {
   const handleLogin = useCallback(
@@ -29,27 +30,67 @@ const Login = ({ history }) => {
   }
 
   return (
-    <center>
-      <h1 style={{padding: "30px"}}  ><img src={Logo} /></h1>
-      <h1 calss='mb-2' >Log in</h1>
-      <form onSubmit={handleLogin}>
-  <div class="form-group col-sm-2 col-form-label2  mb-2  " >
-    <label for="exampleInputEmail1" class='mb-2'>Email address</label>
-    <input type="email" name="email" className="form-control col-xs-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
     
+    <section className="body">
+    <div className="container">
+      <div className="login-box" >
+        <div className="row">
+          <div className="col-sm-6">
+            <div className="logo">
+              <img src={Logo}/>
+              
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-6">
+            <br />
+            <h1 className="header-titles">WELCOME</h1>
+            <h3 className="header-title">LOGIN</h3>
+            <form className="login-form" onSubmit={handleLogin}>
+              <div className="form-group">
+              <input type="email" name="email" className="form-control col-xs-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+              </div>
+              <div className="form-group">
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+                
+              </div>
+              <div className="form-group">
+                <button className="btn btn-primary btn-block" type="submit">LOGIN</button>
+              </div>
+              <div className="form-group">
+                <div className="text-center">
+                  New Member? <a href="/signup">Sign up Now</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className="col-sm-6 hide-on-mobile">
+            <div id="demo" className="carousel slide" data-ride="carousel">
+              {/* Indicators */}
+              <ul className="carousel-indicators">
+                <li data-target="#demo" data-slide-to={0} className="active" />
+                <li data-target="#demo" data-slide-to={1} />
+              </ul>
+              {/* The slideshow */}
+              
+                
+                
+              {/* Left and right controls */}
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
-    
-  </div>
-  <div class="form-group col-sm-2 col-form-label mb-2 ">
-    <label for="exampleInputPassword1" class='mb-2'>Password</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-  </div>
-  <button type="submit" class="btn btn-primary">Log In</button>
-  <div>Don't have an account yet?</div>
-  <a href="/signup">Create account here</a>
-</form>
-    </center>
+
+   
   );
+
 };
+
+
 
 export default withRouter(Login);

@@ -14,6 +14,7 @@ const Home = ({history}) => {
   const Signout = () => {
     app.auth().signOut();
     window.location.reload(true)
+    
   };
 
   const Upload = () => {
@@ -60,8 +61,11 @@ const Home = ({history}) => {
           <li class="nav-item active">
             <a class="nav-link" href="/history">History </a>
         </li>
+        <li class="nav-item active">
+            <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
+        </li>
         <li class="nav-item ">
-          <div style={{marginLeft: "1000px"}}> User: {currentUser.email}</div>
+          <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
         </li>
 
         </ul>
@@ -73,7 +77,7 @@ const Home = ({history}) => {
       <div>
         {currentUser ? (
           <>
-            <div class = "fs-3 fw-bold">{currentUser.email}</div>
+            {/* <div class = "fs-3 fw-bold">{currentUser.email}</div> */}
             {/* <div>User ID: {currentUser.uid}</div> */}
             
           </>
@@ -83,7 +87,7 @@ const Home = ({history}) => {
           
         )}
       </div>
-      <a href = "#" onClick={Signout} >Sign out</a><br></br>
+      {/* <a href = "#" onClick={Signout} >Sign out</a><br></br> */}
           <div class="fs-5 mt-4"> Electro Cardiogram Patterns Predictions with </div> <text class="fs-5 mt-4"> Artificial Intelligence </text>
           <div class="fs-5">ตรวจสอบกราฟคลื่นไฟฟ้าหัวใจ ด้วยปัญญาประดิษฐ์ </div>
           <div class="d-grid gap-2 col-6 mx-auto "
