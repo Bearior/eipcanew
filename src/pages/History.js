@@ -3,14 +3,13 @@ import React, { useState , useContext, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import NavLogo from "../Asset/NavLogo.png"
 import { AuthContext } from "../Auth";
-import img from "../Asset/ECgg.webp"
+
 
 
 
 
 const History = ({ history }) => {
     const { currentUser } = useContext(AuthContext);
-    const [isShown, setIsShown] = useState(false);
     const [data , setData] = useState([]);
     const db = app.firestore();
     const Signout = () => {
@@ -18,6 +17,10 @@ const History = ({ history }) => {
       history.push("/");
       window.location.reload(true)
     };
+
+    const Refresh = () => {
+      window.location.reload();
+    }
 
 
     
@@ -38,57 +41,54 @@ const History = ({ history }) => {
         });
     }, [db])
     
-    
-    
-    const handleClick = event => {
-      setIsShown(current => !current);
-      
-    };
   
-    return (
+    return(
         <>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" >
             <a class="navbar-brand" href="/" style={{marginLeft: "10px"}}>
                 <img src={NavLogo} className="img-responsive" style={{width: "50px"}} />
             </a>
             
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Content" aria-controls="Content" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav mr-auto">
-       <li class="nav-item">
+          <div class="navbar-collapse collapse" id="Content">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item ">
                 <a class="nav-link" href="./">Home </a>
-            </li>
-            <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="./upload">Upload </a>
-            </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">History <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
-        </li>
-        <li class="nav-item ">
-          <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
-        </li>
-            
-      
-        </ul>
-    
-      </div>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">History <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
+              </li>
+              <li class="nav-item ">
+                <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
+              </li>
+            </ul>
+          </div>
     </nav>
 
 
-            <center>
+          <center>
             <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
-            <ul>
+              <p>Please be patient for AI the Predicted the ECG graph</p>
+            
+                <button class="btn btn-success" onClick={Refresh} style={{marginBottom: "20px"}}>
+                Reload Page
+                </button>
+            <ul style={{paddingInline: "20px"}}>
               {data.map((item) => (
               <Frame 
-              Results = {item.Result}
-              Status = {item.status} 
-              Time = {item.Time}
+                Results = {item.Result}
+                Status = {item.status} 
+                Time = {item.Time}
+                File = {item.file}
               />
               ))}
              
@@ -101,16 +101,32 @@ const History = ({ history }) => {
     );
   };
 
-const Frame = ({ Results, Status, Time}) => {
+const Frame = ({ Results, Status, Time, File}) => {
+  const [isDataShown, setIsDataShown] = useState(false);
 
+  const toggleData = () => {
+    setIsDataShown(!isDataShown);
+  };
     // const [Results, setReSults] = useState("");
     // const [Status, setStatus] = useState("");
 
     return(
-      <p>
-        <da>Results : {Results} </da> <br></br>
-        <da>Status : {Status} </da> <br></br>
-        <da>Date & Time : {Time} </da>
+      <p class="bg-light py-3 fs-5">
+        <div class = "fw-bold">Date&Time : {Time}</div> <br></br>
+        <div>Status : {Status}</div> <br></br>
+          {Status !== "Predicted" ?
+          <button class="btn btn-info" disabled onClick={toggleData}>
+          {isDataShown ? "Hide Results" : "Show Results"} 
+          </button> :
+          <button class="btn btn-info" onClick={toggleData}>
+          {isDataShown ? "Hide Results" : "Show Results"} 
+          </button>}
+        {isDataShown && (
+            <div class="py-3 fs-5" >
+              <p>Results: {Results}</p>
+              <img class = "img-fluid img-thumbnail " style={{borderColor: "Red"}} src={File} alt="Image from data"/>
+            </div>
+        )}
       </p>
     );
 }
