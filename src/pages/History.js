@@ -116,21 +116,27 @@ const Frame = ({ Results, Status, Time, File}) => {
     // const [Status, setStatus] = useState("");
 
     return(
-      <p class="bg-light py-3 fs-5">
-        <div class = "fw-bold">Date&Time : {Time}</div> <br></br>
-        <div>Status : {Status}</div> <br></br>
+      <p class="">
+        
         {Status === "Predicted" ?
+           <p class="bg-light py-3 fs-5">
+           <div class = "fw-bold">Date&Time : {Time}</div> <br></br>
+           <div>Status : {Status}</div> <br></br>
           <button class="btn btn-info" onClick={toggleData}>
             {isDataShown ? "Hide Results" : "Show Results"} 
           </button> 
+          </p>
           
           :
-
+          <p class="bg-warning py-3 fs-5">
+          <div class = "fw-bold">Date&Time : {Time}</div> <br></br>
+          <div>Status : {Status}</div> <br></br>
           <div class="d-flex justify-content-center" >
             <div class="spinner-border mr-3 " role="status">
             </div>
             <span class="fs-5 mx-2"> AI Processing...</span>
           </div>
+          </p>
         }
         {isDataShown && Status === "Predicted" && (
             <div class="py-3 fs-5" >
