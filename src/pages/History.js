@@ -25,21 +25,26 @@ const History = ({ history }) => {
 
     
     useEffect(() => {
-      db.collection("EIPCA").where("userid", "==", currentUser.uid)
-        .get()
-        .then((querySnapshot) => {
-          let dataArray = [];
-          querySnapshot.forEach((doc) => {
-            dataArray.push(doc.data());
-            
-          });
-          setData(dataArray);
-          
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
+      const unsubscribe = db.collection("EIPCA").where("userid", "==", currentUser.uid)
+    .onSnapshot((querySnapshot) => {
+      let dataArray = [];
+      querySnapshot.forEach((doc) => {
+        dataArray.push(doc.data());
+        dataArray.sort((a, b) => {
+          if (a.status === "Not Predicted") {
+            return -1; // "Not Predicted" data goes first
+          }
+          if (b.status === "Not Predicted") {
+            return 1; // "Not Predicted" data goes first
+          }
+          return 0; // no need to change order for other statuses
         });
-    }, [db])
+  
+      });
+      setData(dataArray);
+    });
+    return unsubscribe;
+  }, [db])
     
   
     return(
@@ -79,9 +84,9 @@ const History = ({ history }) => {
             <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
               <p>Please be patient for AI the Predicted the ECG graph</p>
             
-                <button class="btn btn-success" onClick={Refresh} style={{marginBottom: "20px"}}>
+                {/* <button class="btn btn-success" onClick={Refresh} style={{marginBottom: "20px"}}>
                 Reload Page
-                </button>
+                </button> */}
             <ul style={{paddingInline: "20px"}}>
               {data.map((item) => (
               <Frame 
@@ -114,14 +119,20 @@ const Frame = ({ Results, Status, Time, File}) => {
       <p class="bg-light py-3 fs-5">
         <div class = "fw-bold">Date&Time : {Time}</div> <br></br>
         <div>Status : {Status}</div> <br></br>
-          {Status !== "Predicted" ?
-          <button class="btn btn-info" disabled onClick={toggleData}>
-          {isDataShown ? "Hide Results" : "Show Results"} 
-          </button> :
+        {Status === "Predicted" ?
           <button class="btn btn-info" onClick={toggleData}>
-          {isDataShown ? "Hide Results" : "Show Results"} 
-          </button>}
-        {isDataShown && (
+            {isDataShown ? "Hide Results" : "Show Results"} 
+          </button> 
+          
+          :
+
+          <div class="d-flex justify-content-center" >
+            <div class="spinner-border mr-3 " role="status">
+            </div>
+            <span class="fs-5 mx-2"> AI Processing...</span>
+          </div>
+        }
+        {isDataShown && Status === "Predicted" && (
             <div class="py-3 fs-5" >
               <p>Results: {Results}</p>
               <img class = "img-fluid img-thumbnail " style={{borderColor: "Red"}} src={File} alt="Image from data"/>
