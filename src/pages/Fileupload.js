@@ -41,7 +41,8 @@ const handleUpload = async () => {
         file: base64,
         status: "NotPredict",
         Result: "null",
-        Time: "null"
+        Time: "null",
+        History: "NotHistoried"
       });
       alert("File uploaded successfully!");
       history.push("/history");

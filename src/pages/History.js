@@ -39,7 +39,6 @@ const History = ({ history }) => {
           }
           return 0; // no need to change order for other statuses
         });
-  
       });
       setData(dataArray);
     });
@@ -81,7 +80,7 @@ const History = ({ history }) => {
 
 
           <center>
-            <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
+              <div class="mx-auto py-4 fs-1 fw-bold">Result History</div>
               <p>Please be patient for AI the Predicted the ECG graph</p>
             
                 {/* <button class="btn btn-success" onClick={Refresh} style={{marginBottom: "20px"}}>
@@ -94,6 +93,7 @@ const History = ({ history }) => {
                 Status = {item.status} 
                 Time = {item.Time}
                 File = {item.file}
+                History = {item.History}
               />
               ))}
              
@@ -106,19 +106,23 @@ const History = ({ history }) => {
     );
   };
 
-const Frame = ({ Results, Status, Time, File}) => {
+const Frame = ({ Results, Status, Time, File, History}) => {
   const [isDataShown, setIsDataShown] = useState(false);
+
 
   const toggleData = () => {
     setIsDataShown(!isDataShown);
   };
     // const [Results, setReSults] = useState("");
     // const [Status, setStatus] = useState("");
+   
 
     return(
       <p class="">
         
+        
         {Status === "Predicted" ?
+        
            <p class="bg-light py-3 fs-5">
            <div class = "fw-bold">Date&Time : {Time}</div> <br></br>
            <div>Status : {Status}</div> <br></br>
@@ -139,9 +143,10 @@ const Frame = ({ Results, Status, Time, File}) => {
           </p>
         }
         {isDataShown && Status === "Predicted" && (
-            <div class="py-3 fs-5" >
+            <div class="py-3 fs-5" style={{backgroundColor: Results === "Normal" ? "lightgray" : "lightgray" }} >
               <p>Results: {Results}</p>
-              <img class = "img-fluid img-thumbnail " style={{borderColor: "Red"}} src={File} alt="Image from data"/>
+              <img class="img-fluid img-thumbnail" style={{borderColor: Results === "Normal" ? "Green" : "Red" ,borderWidth: "10px"}} src={File} alt="Image from data" />
+              
             </div>
         )}
       </p>
