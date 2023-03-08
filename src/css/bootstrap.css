@@ -1,10 +1,4 @@
-/*!
- * Bootstrap v4.5.2 (https://getbootstrap.com/)
- * Copyright 2011-2020 The Bootstrap Authors
- * Copyright 2011-2020 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
- :root {
+:root {
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -202,12 +196,6 @@
     margin: 0 0 1rem;
   }
   
-  /* img {
-    vertical-align: middle;
-    border-style: none;
-    
-    border-radius: 10px;
-  } */
   img .img6{
     width: 10px;
     height: 10px;
@@ -10273,4 +10261,3 @@
       border-color: #dee2e6;
     }
   }
-  /*# sourceMappingURL=bootstrap.css.map */

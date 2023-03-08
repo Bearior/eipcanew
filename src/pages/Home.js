@@ -274,7 +274,7 @@ const Home = ({history}) => {
               </p>
               </a>
             </div>{" "}
-            <div className="job-container " >
+            {/* <div className="job-container " >
               <a style={{textDecoration: "none"}} href="/Brugada">
               <img
                 className="img6"
@@ -288,7 +288,7 @@ const Home = ({history}) => {
                 
               </p>
               </a>
-            </div>{" "}
+            </div>{" "} */}
             {/* end of job-container */}
             {/* end of job */}
             {/* Job */}
@@ -310,20 +310,15 @@ const Home = ({history}) => {
             {/* end of job-container */}
             {/* end of job */}
             {/* Job */}
-            <div className="job-container">
+            {/* <div className="job-container">
               <a style={{textDecoration: "none"}} href="/HowtoUse">
               <img
                 className="img6"
                 src={Logo2}
               />
-              <h2>วิธีใช้</h2>
-              <p>
-              EIPCA อุปกรณ์ตรวจวัดคลื่นไฟฟ้าหัวใจ
-            เพื่อให้ได้ผลการวินิจฉัยที่แม่นยำและถูกต้องที่สุดโปรดศึกษาและทำตามคำแนะนำอย่างเคร่งครัด{" "}
-                
-              </p>
+              
               </a>
-            </div>{" "}
+            </div>{" "} */}
             {/* end of job-container */}
             {/* end of job */}
             {/* Job */}
