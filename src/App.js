@@ -8,7 +8,14 @@ import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
 import FileUpload from "./pages/Fileupload";
 import History from "./pages/History";
-import Aitest from "./pages/AItest"
+import Aitest from "./pages/AItest";
+import About from "./pages/about";
+import Brugada from "./pages/Brugada";
+import Hardware from "./pages/Hardware";
+import Read from "./pages/Read";
+import Use from "./pages/Use";
+import ECGs from "./pages/ECG"
+import Data1 from "./pages/Data1"
 
 function App() {
   return (
@@ -21,6 +28,13 @@ function App() {
           <Route exact path="/upload" component={FileUpload} />
           <Route exact path="/History" component={History} />
           <Route exact path="/Aitest" component={Aitest} />
+          <Route exact path="/about" component={About}/>
+          <Route exact path="/Brugada" component={Brugada}/>
+          <Route exact path="/Hardware" component={Hardware}/>
+          <Route exact path="/Read" component={Read}/>
+          <Route exact path="/HowtoUse" component={Use}/>
+          <Route exact path="/ECGs" component={ECGs}/>
+          <Route exact path="/Data1" component={Data1}/>
         </div>
       </Router>
     </AuthProvider>

@@ -3,8 +3,12 @@ import app from "../base";
 import { withRouter } from "react-router-dom";
 import { AuthContext } from "../Auth";
 import NavLogo from "../Asset/NavLogo.png"
-
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Logo from "../images/logo text.png" 
+ import Logo2 from "../images/logo pic.png" 
 
 const FileUpload = ({history}) => {
   const { currentUser } = useContext(AuthContext);
@@ -68,40 +72,79 @@ const handleUpload = async () => {
 
   return (
     <>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light " >
-            <a class="navbar-brand" href="/" style={{marginLeft: "10px"}}>
-                <img src={NavLogo} className="img-responsive" style={{width: "50px"}} />
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <Navbar className="navbar fixed-top navbar-light" expand="lg">
+      <Container className="container">
+      <Navbar.Brand className="navbar-brand logo-image" href="/">
+        <img src= {Logo} />
+      </Navbar.Brand>
+      <Navbar.Toggle
+        className="navbar-toggler p-0 border-0"
+        type="button"
+        data-toggle="offcanvas"
+        aria-controls="basic-navbar-nav"
+      />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="navbar-nav ml-auto">
+          <li className="nav-item">
+          <Nav.Link className="nav-link" href="/">
+              บริการ <span className="sr-only">(current)</span>
+            </Nav.Link>
+          </li>
+          <li className="nav-item">
+          <Nav.Link className="nav-link" href="/about">
+              เกี่ยวกับเรา
+            </Nav.Link>
+          </li>
+            
+            <li className="nav-item">
+            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >Sign out </Nav.Link>
+            </li>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav mr-auto">
-       <li class="nav-item">
-                <a class="nav-link" href="./">Home </a>
-            </li>
-            <li class="nav-item active" >
-                <a class="nav-link" href="#"> Upload <span class="sr-only">(current)</span></a>
-            </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="./history">History </a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" style={{color: "red"}} href = "#" onClick={Signout} >Sign out </a>
-        </li>
-        <li class="nav-item ">
-          <div style={{marginLeft: "900px"}}> User: {currentUser.email}</div>
-        </li>
-      </ul>
-    
+          <li className="nav-item">
+            <a className= "mx-3" href="/History">
+              <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
+          </a>
+          </li>
+          
+         
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+
+  <header id="header" className="header">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-xl-5">
+          <div className="bg-gray" style={{padding: "30px", borderRadius: "10px"}}>
+              <h1 className="h1-large">
+                Upload ECG <br />
+              </h1>
+                <label for="formFileLg" class="form-label">Please choose your file then press upload <br></br>(File format : JPG, PNG, JPEG only)</label>
+                <input class="form-control form-control-lg col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn-solid-lg px-6 mx-4" onClick={handleUpload} disabled={!file}>Upload</button> <br></br> 
+                </div>          
+             </div>        
+           </div>     
+          <div className="col-lg-6 col-xl-7">
+            <div className="" style={{maxHeight: "50%", minHeight: "50%"}}>
+              <img src={file ? base64 : Logo2} class="img-thumbnail img-fluid px-3 my-4" /> <br></br>
+            </div>
+        
+        </div>
+        
       </div>
-    </nav>
-    <center>
-      <h1>Upload ECG</h1>
+     
+    </div>
+  </header>
+    {/* <center>
+   
+    
+      <h1 className="mt-5">Upload ECG</h1>
       <div class="form-group col-sm-4 col-form-label2  mb-2 my-4" >
         <label for="formFileLg" class="form-label">Please choose your file then press upload</label>
-        <input class="form-control form-control-lg col-sm-2 col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
+        <input class="form-control form-control-lg col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
         <label> File format : JPG, PNG, JPEG only</label>
       </div>
       {file && <img src={base64} class="img-thumbnail img-fluid px-3 my-4" style={{maxHeight: "50%"}}/>} <br></br>
@@ -112,7 +155,7 @@ const handleUpload = async () => {
       <div>.</div>
       
       
-    </center>
+    </cente */}
       
     </>
   );
