@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 import "../App.css"
 import "../css/bootstrap.css"
 import "../css/styles.css"
-import "../css/magnific-popup.css"
+// import "../css/magnific-popup.css"
 import Logo from "../images/logo text.png" 
 import Logo2 from "../images/logo pic.png" 
 import Container from 'react-bootstrap/Container';
@@ -70,7 +70,7 @@ const Home = ({history}) => {
           </li>
             
             <li className="nav-item">
-            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >Sign out </Nav.Link>
+            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ</Nav.Link>
             </li>
 
           <li className="nav-item">
@@ -384,14 +384,14 @@ const Home = ({history}) => {
             {/* end of job */}
             {/* Job */}
             <div className="job-container">
-            <a style={{textDecoration: "none"}} href="">
+            <a style={{textDecoration: "none"}} href="/Data2">
               <img
                 className="img6"
                 src={Logo2}
               />
               <h4  className="my-2">การนอนกรนกับโรคไหลตาย</h4>
               <p>
-              การนอนกรน ไม่ใช่เรื่องธรรมดาทั่วไปที่สามารถมองข้ามได้เพราะอาจคิดว่าไม่ได้ร้ายแรงอะไรมากนัก แต่ความจริงแล้วนั้น การนอนกรน เป็นเรื่องสำคัญที่ควรใส่ใจมากยิ่งขึ้น{" "}
+              การนอนกรน ไม่ใช่เรื่องธรรมดาทั่วไปที่สามารถมองข้ามได้เพราะอาจคิดว่าไม่ได้ร้ายแรงอะไรมากนัก แต่ความจริงแล้วนั้น การนอนกรน {" "}
                 <a className="purple no-line" href="job-details-AF.html">
                   
                   Details &gt;&gt;
@@ -403,7 +403,7 @@ const Home = ({history}) => {
             {/* end of job */}
             {/* Job */}
             <div className="job-container">
-            <a style={{textDecoration: "none"}} href="">
+            <a style={{textDecoration: "none"}} href="/Data3">
               <img
                 className="img6"
                 src={Logo2}
@@ -421,7 +421,7 @@ const Home = ({history}) => {
             {/* end of job */}
             {/* Job */}
             <div className="job-container">
-            <a style={{textDecoration: "none"}} href="">
+            <a style={{textDecoration: "none"}} href="/Data4">
               <img
                 className="img6"
                 src={Logo2}

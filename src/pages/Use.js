@@ -53,7 +53,7 @@ const Signout = () => {
           </li>
             
             <li className="nav-item">
-            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >Sign out </Nav.Link>
+            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ</Nav.Link>
             </li>
 
           <li className="nav-item">

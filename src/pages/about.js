@@ -59,7 +59,7 @@ const About = ({history}) => {
           </li>
             
             <li className="nav-item">
-            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >Sign out </Nav.Link>
+            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ</Nav.Link>
             </li>
 
           <li className="nav-item">
@@ -167,14 +167,24 @@ const About = ({history}) => {
           </div>{" "}
           {/* end of text-container */}
         </div>{" "}
+        
         {/* end of col */}
       </div>{" "}
+      <>
       {/* end of row */}
     </div>{" "}
     {/* end of container */}
+    
   </div>{" "}
   {/* end of basic-5 */}
   {/* end of details 2 */}
+  
+  
+  
+  
+
+
+  
   {/* Footer */}
   <div className="footer bg-gray">
     <div className="container">
@@ -264,17 +274,6 @@ const About = ({history}) => {
     </div>{" "}
     {/* end of container */}
   </div>{" "}
-  {/* end of copyright */}
-  {/* end of copyright */}
-  {/* Scripts */}
-  {/* jQuery for Bootstrap's JavaScript plugins */}
-  {/* Bootstrap framework */}
-  {/* jQuery Easing for smooth scrolling between anchors */}
-  {/* Swiper for image and text sliders */}
-  {/* Magnific Popup for lightboxes */}
-  {/* Morphtext rotating text in the header */}
-  {/* Isotope for filter */}
-  {/* Custom scripts */}
 
 
 

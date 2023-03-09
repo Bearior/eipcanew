@@ -80,7 +80,7 @@ const Hardware = ({history}) => {
             </div>
           </li> */}
           <li className="nav-item">
-          <a class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >Sign out </a>
+          <a class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ </a>
           </li>
           <li className="nav-item">
           <a className= "mx-3" href="/History">

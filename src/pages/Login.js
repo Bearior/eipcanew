@@ -68,10 +68,7 @@ const Login = ({ history }) => {
           <div className="col-sm-6 hide-on-mobile">
             <div id="demo" className="carousel slide" data-ride="carousel">
               {/* Indicators */}
-              <ul className="carousel-indicators">
-                <li data-target="#demo" data-slide-to={0} className="active" />
-                <li data-target="#demo" data-slide-to={1} />
-              </ul>
+              
               {/* The slideshow */}
               
                 

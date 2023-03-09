@@ -1,7 +1,6 @@
 import app from "../base";
 import React, { useState , useContext, useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import NavLogo from "../Asset/NavLogo.png"
 import { AuthContext } from "../Auth";
 import Logo from "../images/logo text.png" 
 import "../App.css"
@@ -12,6 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Logo2 from "../images/logo pic.png"
 
 
 const History = ({ history }) => {
@@ -28,6 +28,25 @@ const History = ({ history }) => {
       window.location.reload();
     }
 
+    const links = document.querySelectorAll('.profile-info li a');
+
+    links.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        link.style.backgroundColor = '#3E8E41';
+      });
+    
+      link.addEventListener('mouseleave', () => {
+        link.style.backgroundColor = '#4CAF50';
+      });
+    });
+    
+    
+    
+    
+    
+    
+    
+
 
     
     useEffect(() => {
@@ -36,15 +55,15 @@ const History = ({ history }) => {
       let dataArray = [];
       querySnapshot.forEach((doc) => {
         dataArray.push(doc.data());
-        dataArray.sort((a, b) => {
-          if (a.status === "NotPredict") {
-            return -1; // "Not Predicted" data goes first
+        dataArray.sort((lhs, rhs) => {
+          if(lhs.Time !== rhs.Time){
+            return ((lhs.Time < rhs.Time) - 0.5) * 2;
+          } else if(lhs.status !== rhs.status){
+            return ((lhs.status > rhs.status) - 0.5) * 2;
           }
-          if (b.status === "NotPredict") {
-            return 1; // "Not Predicted" data goes first
-          }
-          return 0; // no need to change order for other statuses
-        });
+          return 0;
+        })
+
       });
       setData(dataArray);
     });
@@ -79,7 +98,7 @@ const History = ({ history }) => {
           </li>
             
             <li className="nav-item">
-            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >Sign out </Nav.Link>
+            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ</Nav.Link>
             </li>
 
           <li className="nav-item">
@@ -93,17 +112,50 @@ const History = ({ history }) => {
       </Navbar.Collapse>
     </Container>
   </Navbar>
+  <header  className="ex-header bg-gray fixed-top " style={{zIndex: "1"}}  >
+    <div className="container" >
+      <div className="row">
+        <div style={{ marginLeft: "30%"}} className="col-xl-10 offset-xl-1" >
+          <h1 >ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</h1>
+
+        </div>{" "}
+        {/* end of col */}
+      </div>{" "}
+      {/* end of row */}
+    </div>{" "}
+    {/* end of container */}
+  </header>{" "}
+ 
 
 
+  <center>      
+  <div style={{marginBottom: "13%"}}>.</div>
+  <div className="sidenav">
+              <center>
+              <div class="mx-auto py-4 fs-1  mt-5">
+              
+              <img style={{width: "20%", height: "20%"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  /><br></br>
+              <h1>EIPCA ยินดีต้อนรับ</h1><br></br>
+              <p class=" py-1  fw-bold " style={{fontSize: "80%"}}>{currentUser.email}</p>
+              </div>
+              {/* <div class=" py-4 fs-1 fw-bold mt-5">ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</div> */}
+              {/* <p>Please be patient for AI the Predicted the ECG graph</p> */}
+              <img style={{width: "80%", borderRadius: "10px"}}src={Logo2}></img>
+              </center>
+  </div>
+  </center>
+  
+      
+   
           <center>
-            <div class="mx-auto py-4 fs-1  mt-5">
+            {/* <div class="mx-auto py-4 fs-1  mt-5">
               
               <img style={{width: "20%", height: "20%"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  /><br></br>
               <p class="mx-auto py-2 fs-1 fw-bold ">Welcome!</p><br></br>
               <p class="mx-auto py-1 fs-1 fw-bold ">{currentUser.email}</p>
             </div>
               <div class="mx-auto py-4 fs-1 fw-bold mt-5">Result History</div>
-              <p>Please be patient for AI the Predicted the ECG graph</p>
+              <p>Please be patient for AI the Predicted the ECG graph</p> */}
             
                 {/* <button class="btn btn-success" onClick={Refresh} style={{marginBottom: "20px"}}>
                 Reload Page
@@ -140,9 +192,11 @@ const Frame = ({ Results, Status, Time, File, History}) => {
    
 
     return(
-    <p >
+      
+    <p>
+      
     {Status === "NotPredict" && (
-      <p className="bg-warning py-3 fs-5">
+      <p className="bg-warning py-3 fs-5" style={{ marginLeft: "15%"}} >
         <div className="fw-bold">Date&Time : {Time}</div> <br />
         <div>Status : {Status}</div> <br />
         <div className="d-flex justify-content-center">
@@ -152,7 +206,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
       </p>
     )}  
     {Status === "Predicted" && (
-      <p className="bg-light py-3 fs-5">
+      <p className="bg-light py-3 fs-5" style={{ marginLeft: "15%"}}>
         <div className="fw-bold">Date&Time : {Time}</div> <br />
         <div>Status : {Status}</div> <br />
         <button className="btn-solid-lg" onClick={toggleData}>
@@ -166,7 +220,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
       <div
         className="py-3 fs-5"
         style={{
-          backgroundColor: Results === "Normal" ? "lightgray" : "lightgray",
+          backgroundColor: Results === "Normal" ? "lightgray" : "lightgray", marginLeft:"15%"
         }}
       >
         <p>ผลการตรวจสอบ {Results}</p>

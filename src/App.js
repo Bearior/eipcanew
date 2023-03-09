@@ -16,6 +16,9 @@ import Read from "./pages/Read";
 import Use from "./pages/Use";
 import ECGs from "./pages/ECG"
 import Data1 from "./pages/Data1"
+import Data2 from "./pages/Data2"
+import Data3 from "./pages/Data3"
+import Data4 from "./pages/Data4"
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
           <Route exact path="/HowtoUse" component={Use}/>
           <Route exact path="/ECGs" component={ECGs}/>
           <Route exact path="/Data1" component={Data1}/>
+          <Route exact path="/Data2" component={Data2}/>
+          <Route exact path="/Data3" component={Data3}/>
+          <Route exact path="/Data4" component={Data4}/>
         </div>
       </Router>
     </AuthProvider>
