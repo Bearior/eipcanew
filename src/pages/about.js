@@ -170,7 +170,7 @@ const About = ({history}) => {
         
         {/* end of col */}
       </div>{" "}
-      <>
+      
       {/* end of row */}
     </div>{" "}
     {/* end of container */}
