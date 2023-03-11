@@ -317,6 +317,49 @@ a:hover {
 	text-decoration: none;
 }
 
+.btn-solid-lgs {
+	display: inline-block;
+	padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+	border: 1px solid #46C6CE;
+	border-radius: 32px;
+	background-color: #46C6CE;
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 0.875rem;
+	line-height: 0;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.btn-solid-lgs:hover {
+	border: 1px solid #46C6CE;
+	background-color: transparent;
+	color: #46C6CE;
+	text-decoration: none;
+}
+
+.btn-solid-lgr {
+	display: inline-block;
+	padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+	border: 1px solid #ce4646;
+	border-radius: 32px;
+	background-color: #ce4646;
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 0;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.btn-solid-lgr:hover {
+	border: 1px solid #ce4646;
+	background-color: transparent;
+	color: #ce4646;
+	text-decoration: none;
+}
+
+
 .btn-outline-reg {
 	display: inline-block;
 	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
@@ -330,6 +373,8 @@ a:hover {
 	text-decoration: none;
 	transition: all 0.2s;
 }
+
+
 
 .btn-outline-reg:hover {
 	border: 1px solid #181c3b;

@@ -129,7 +129,7 @@ const History = ({ history }) => {
 
 
   <center>      
-  <div style={{marginBottom: "17%"}}>.</div>
+  <div style={{marginBottom: "13%"}}>.</div>
   <div className="sidenav">
               <center>
               <div class="mx-auto py-4 fs-1  mt-5">
