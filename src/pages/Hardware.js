@@ -306,7 +306,7 @@ const Hardware = ({history}) => {
                   <span className="fas fa-circle fa-stack-2x" />
                   <span className="fa-stack-1x">1</span>
                 </span>
-                <div className="media-body">
+                <div className="media-body=">
                   <h5>ก่อนประมวลผล</h5>
                   <p>
                     นั่งอยู่ในท่าสะบาย และอยู่ในสภาวะพัก

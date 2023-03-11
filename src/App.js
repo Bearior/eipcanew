@@ -19,6 +19,11 @@ import Data1 from "./pages/Data1"
 import Data2 from "./pages/Data2"
 import Data3 from "./pages/Data3"
 import Data4 from "./pages/Data4"
+import Form from "./pages/Form"
+import Quiz from "./pages/Quiz"
+import  SuggestionHealthy from "./pages/SuggestionHealthy"
+import  SuggestionBad from "./pages/SuggestionBad"
+import  Hospital from "./pages/Hospital"
 
 function App() {
   return (
@@ -41,6 +46,11 @@ function App() {
           <Route exact path="/Data2" component={Data2}/>
           <Route exact path="/Data3" component={Data3}/>
           <Route exact path="/Data4" component={Data4}/>
+          <Route exact path="/Form" component={Form}/>
+          <Route exact path="/Quiz" component={Quiz}/>
+          <Route exact path="/SuggestionHealthy" component={SuggestionHealthy}/>
+          <Route exact path="/SuggestionBad" component={SuggestionBad}/>
+          <Route exact path="/Hospital" component={Hospital}/>
         </div>
       </Router>
     </AuthProvider>

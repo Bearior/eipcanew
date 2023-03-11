@@ -8,7 +8,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from "../images/logo text.png" 
- import Logo2 from "../images/logo pic.png" 
+import Logo2 from "../images/logo pic.png" 
+
 
 const FileUpload = ({history}) => {
   const { currentUser } = useContext(AuthContext);
@@ -131,31 +132,10 @@ const handleUpload = async () => {
             <div className="" style={{maxHeight: "50%", minHeight: "50%"}}>
               <img src={file ? base64 : Logo2} class="img-thumbnail img-fluid px-3 my-4" /> <br></br>
             </div>
-        
         </div>
-        
       </div>
-     
     </div>
   </header>
-    {/* <center>
-   
-    
-      <h1 className="mt-5">Upload ECG</h1>
-      <div class="form-group col-sm-4 col-form-label2  mb-2 my-4" >
-        <label for="formFileLg" class="form-label">Please choose your file then press upload</label>
-        <input class="form-control form-control-lg col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
-        <label> File format : JPG, PNG, JPEG only</label>
-      </div>
-      {file && <img src={base64} class="img-thumbnail img-fluid px-3 my-4" style={{maxHeight: "50%"}}/>} <br></br>
-      <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary px-6 mx-4" onClick={handleUpload} disabled={!file}>Upload</button> <br></br> 
-      </div>
-      
-      <div>.</div>
-      
-      
-    </cente */}
       
     </>
   );

@@ -260,16 +260,16 @@ const Home = ({history}) => {
           <div className="col-lg-12">
             {/* Job */}
             <div className="job-container">
-              <a style={{textDecoration: "none"}} href="/Upload">
+              <a style={{textDecoration: "none"}} href="/Form">
               <img
                 className="img6"
                 src={Logo2}
               />
               <h2  className="my-2">
-                อัพโหลด
+                แบบประเมิน และ การประมวลผล
               </h2>
               <p>
-                ท่านสามารถคลิ๊กเพื่ออัพโหลดข้อมูลกราฟคลื่นไฟฟ้าหัวใจและให้AI ประมวลผลได้{" "}
+                สามารถกดเข้าไปเพื่อเริ่มทำแบบประเมินความเสี่ยงการเกิดโรคหัวใจ และอัพโหลดกราฟคลื่นไฟฟ้าหัวใจเพื่อให้ระบบปัญญาประดิษฐ์เริ่มประมวลผล{" "}
                 
               </p>
               </a>

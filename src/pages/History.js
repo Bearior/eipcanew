@@ -129,14 +129,15 @@ const History = ({ history }) => {
 
 
   <center>      
-  <div style={{marginBottom: "13%"}}>.</div>
+  <div style={{marginBottom: "17%"}}>.</div>
   <div className="sidenav">
               <center>
               <div class="mx-auto py-4 fs-1  mt-5">
               
               <img style={{width: "20%", height: "20%"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  /><br></br>
               <h1>EIPCA ยินดีต้อนรับ</h1><br></br>
-              <p class=" py-1  fw-bold " style={{fontSize: "80%"}}>{currentUser.email}</p>
+              <p class=" py-1  fw-bold " style={{fontSize: "80%"}}>{currentUser.displayName}</p>
+              <p class=" py-1  " style={{fontSize: "50%"}}>{currentUser.email}</p>
               </div>
               {/* <div class=" py-4 fs-1 fw-bold mt-5">ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</div> */}
               {/* <p>Please be patient for AI the Predicted the ECG graph</p> */}
@@ -212,31 +213,64 @@ const Frame = ({ Results, Status, Time, File, History}) => {
         <button className="btn-solid-lg" onClick={toggleData}>
           {isDataShown ? "Hide Results" : "Show Results"}
         </button>
+       
       </p>
     )}
 
 
-    {isDataShown && Status === "Predicted" && (
-      <div
-        className="py-3 fs-5"
-        style={{
-          backgroundColor: Results === "Normal" ? "lightgray" : "lightgray", marginLeft:"15%"
-        }}
-      >
-        <p>ผลการตรวจสอบ {Results}</p>
+  {isDataShown && Status === "Predicted" && (
+    <div className="py-3 fs-5" style={{backgroundColor: "", marginLeft:"15%"}}>
+      <p>ผลการตรวจสอบ</p>
+        {Results === "Normal" ? (
+          <div>
         <img
           className="img-fluid img-thumbnail"
           style={{
-            borderColor: Results === "Normal" ? "Green" : "Red",
-            borderWidth: "10px",
-            maxHeight: "40%",
-            maxWidth: "40%"
-          }}
-          src={File}
-          alt="Image from data"
-        />
+          borderColor: "Green",
+          borderWidth: "10px",
+          maxHeight: "40%",
+          maxWidth: "40%"
+        }}
+        src={File}
+        alt="Image from data"
+      />
+      <br/>
+      <br/>
+       <a  className="btn-solid-lg page-scroll " href="/SuggestionHealthy">
+      ข้อแนะนำ
+      </a>
       </div>
+      
+    ) : (
+      <div>
+         <img
+          className="img-fluid img-thumbnail mx-5"
+          style={{
+          borderColor: "Red",
+          borderWidth: "5px",
+          maxHeight: "40%",
+          maxWidth: "40%"
+           }}
+            src={File}
+            alt="Image from data"
+            />
+          <img className="img-fluid img-thumbnail "  style={{
+                maxHeight: "40%",
+                maxWidth: "40%"
+                  }}
+                src="https://ecgwaves.com/wp-content/uploads/2017/03/brugada-syndrome-ecg-criteria-characteristics-brugadas-type-1-2-3.jpg"/>
+          <br/>
+          <br/>
+          <a  className="btn-solid-lg page-scroll " href="/SuggestionBad">
+          ข้อแนะนำ
+          </a>
+          </div>
     )}
+    <br/>
+    <br/>
+   
+  </div>
+)}
   </p>
 );
 }
