@@ -288,6 +288,8 @@ const Hardware = ({history}) => {
             src="https://scontent.fbkk13-2.fna.fbcdn.net/v/t1.15752-9/310858707_1126380597992939_4844533496102810291_n.png?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGPHw1Ho9-mICvfBaoZCg0Fg_EHijFo2xuD8QeKMWjbGxP-UiBnI0H8azaGSRfvJiCqWAqAQPkK43YGxapoJjXW&_nc_ohc=TywLk-89moAAX-daNhU&_nc_oc=AQlsff7zBOSY8kGYtRf9hvkEWzILm90fl9YmxCK3KDwko645TJZSSUcPQs2o2sEEhLs&_nc_ht=scontent.fbkk13-2.fna&oh=03_AdTSrkcpT6s1kslQ3_JGZBRDoEkHIGXorCIko7UNngFqPw&oe=642E3E0D"
             alt="alternative"
           />
+          
+        
         </div>{" "}
         {/* end of col */}
       </div>{" "}
@@ -297,8 +299,12 @@ const Hardware = ({history}) => {
   </div>{" "}
   {/* end of ex-basic-1 */}
   {/* end of basic */}
+          
+
+
+
   <center>
-  <a  className="btn-solid-lg page-scroll " href="/HardwareManual">
+  <a  className="btn-solid-lg page-scroll " href="/HardwareHistory">
               เริ่มการตรวจด้วยอุปกรณ์
   </a>
   </center>

@@ -24,7 +24,7 @@ import Quiz from "./pages/Quiz"
 import  SuggestionHealthy from "./pages/SuggestionHealthy"
 import  SuggestionBad from "./pages/SuggestionBad"
 import  Hospital from "./pages/Hospital"
-import HardwareManual from "./pages/HardwareManual"
+import HardwareHistory from "./pages/HardwareHistory"
 
 function App() {
   return (
@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/SuggestionHealthy" component={SuggestionHealthy}/>
           <Route exact path="/SuggestionBad" component={SuggestionBad}/>
           <Route exact path="/Hospital" component={Hospital}/>
-          <Route exact path="/HardwareManual" component={HardwareManual}/>
+          <Route exact path="/HardwareHistory" component={HardwareHistory}/>
         </div>
       </Router>
     </AuthProvider>

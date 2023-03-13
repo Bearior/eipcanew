@@ -14,19 +14,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo2 from "../images/logo pic.png"
 
 
-const History = ({ history }) => {
+const HardwareHistory = ({ history }) => {
     const { currentUser } = useContext(AuthContext);
     const [data , setData] = useState([]);
     const db = app.firestore();
+    const [serial , setSerial]  = useState("");
+    const [serialvalue , setSerialNumber]  = useState("");
     const Signout = () => {
       app.auth().signOut();
       history.push("/");
       window.location.reload(true)
     };
-
-    const Refresh = () => {
-      window.location.reload();
-    }
 
     const links = document.querySelectorAll('.profile-info li a');
 
@@ -39,18 +37,18 @@ const History = ({ history }) => {
         link.style.backgroundColor = '#4CAF50';
       });
     });
-    
-    
-    
-    
-    
-    
-    
 
+    const handleClick = () => {
+        // Perform some action here based on the serial number, and then clear the input
+        console.log(`Serial number entered: ${serial}`);
+        setSerial(serialvalue);
+    }
+    
+    
 
     
     useEffect(() => {
-      const unsubscribe = db.collection("EIPCA").where("userid", "==", currentUser.uid)
+      const unsubscribe = db.collection("ECGHARDWARE").where("serial", "==", serial)
     .onSnapshot((querySnapshot) => {
       let dataArray = [];
       querySnapshot.forEach((doc) => {
@@ -66,10 +64,12 @@ const History = ({ history }) => {
 
       });
       setData(dataArray);
+      console.log(dataArray)
+      console.log(serial)
     });
     return unsubscribe;
-  }, [db])
-    
+  }, [db, serial])
+
   
     return(
         <>
@@ -115,8 +115,8 @@ const History = ({ history }) => {
   <header  className="ex-header bg-gray fixed-top " style={{zIndex: "1"}}  >
     <div className="container" >
       <div className="row">
-        <div style={{ marginLeft: "30%"}} className="col-xl-10 offset-xl-1" >
-          <h1 >ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</h1>
+        <div style={{ marginLeft: "22%"}} className="col-xl-10 offset-xl-1" >
+          <h1 >ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ ด้วยอุปกรณ์</h1>
 
         </div>{" "}
         {/* end of col */}
@@ -129,7 +129,7 @@ const History = ({ history }) => {
 
 
   <center>      
-  <div style={{marginBottom: "13%"}}>.</div>
+  <div style={{marginBottom: "17%"}}>.</div>
   <div className="sidenav">
               <center>
               <div class="mx-auto py-4 fs-1  mt-5">
@@ -142,8 +142,19 @@ const History = ({ history }) => {
               {/* <div class=" py-4 fs-1 fw-bold mt-5">ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</div> */}
               {/* <p>Please be patient for AI the Predicted the ECG graph</p> */}
               <img style={{width: "80%", borderRadius: "10px"}}src={Logo2}></img>
+              <div class="form-group col-sm-8 col-form-label mb-2">
+                <label for="exampleInputEmail1" class="form-label">Input Serial Number</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder = "Input serial number" aria-describedby="emailHelp" maxlength="4"
+                value={serialvalue}
+                onChange={event => setSerialNumber(event.target.value)}></input>
+                <div id="emailHelp" class="form-text">รหัสเครื่อง 4 ตัวของท่านอยู่ใต้บรรจุภัณฑ์ </div>
+                </div>
               </center>
+              <button className="btn-solid-lg   " onClick={handleClick} >
+                ตรวจผลการวัดค่า
+                </button>
   </div>
+  
   </center>
   
       
@@ -153,9 +164,9 @@ const History = ({ history }) => {
               {data.map((item) => (
               <Frame 
                 Results = {item.Result}
-                Status = {item.status} 
+                Status = {item.graph_status} 
                 Time = {item.Time}
-                File = {item.file}
+                File = {item.graph_image}
                 History = {item.History}
               />
               ))}
@@ -192,7 +203,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
         </div>
       </p>
     )}  
-    {Status === "Predicted" && (
+    {Status === "Plotted and Predicted" && (
       <p className="bg-light py-3 fs-5" style={{ marginLeft: "15%"}}>
         <div className="fw-bold">Date&Time : {Time}</div> <br />
         <div>Status : {Status}</div> <br />
@@ -204,7 +215,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
     )}
 
 
-  {isDataShown && Status === "Predicted" && (
+  {isDataShown && Status === "Plotted and Predicted" && (
     <div className="py-3 fs-5" style={{backgroundColor: "", marginLeft:"15%"}}>
       <p>ผลการตรวจสอบ</p>
         {Results === "Normal" ? (
@@ -261,4 +272,4 @@ const Frame = ({ Results, Status, Time, File, History}) => {
 );
 }
 
-export default withRouter(History);
+export default withRouter(HardwareHistory);
