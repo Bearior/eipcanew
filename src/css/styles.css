@@ -182,12 +182,12 @@ html {
   }
 body, p {
 	color: #707375; 
-	font: 400 1rem/1.625rem "Open Sans", sans-serif;
+	font: 400 1rem "Open Sans", sans-serif;
 }
 
 h1 {
 	color: #5F4B8B;
-	font: 600 2.5rem/3.25rem "Poppins", sans-serif;
+	font: 600 2.5rem "Poppins", sans-serif;
 	font-weight: 800 !important;
 }
 .font-weight-medium {
@@ -195,27 +195,27 @@ h1 {
   }
 h2 {
 	color: #5F4B8B;
-	font: 600 2rem/2.75rem "Poppins", Noto Sans Thai;
+	font: 600 2rem "Poppins", Noto Sans Thai;
 }
 
 h3 {
 	color: #181c3b;
-	font: 600 1.75rem/2.375rem "Poppins", sans-serif;
+	font: 600 2.375rem "Poppins", sans-serif;
 }
 
 h4 {
 	color: #5F4B8B;
-	font: 600 1.5rem/2.125rem "Poppins", sans-serif;
+	font: 600 2.125rem "Poppins", sans-serif;
 }
 
 h5 {
 	color: #5F4B8B;
-	font: 600 1.25rem/1.75rem "Poppins", sans-serif;
+	font: 600 1.75rem "Poppins", sans-serif;
 }
 
 h6 {
 	color: #5F4B8B;
-	font: 600 1rem/1.5rem "Poppins", sans-serif;
+	font: 600 1.5rem "Poppins", sans-serif;
 }
 
 .p-large {
