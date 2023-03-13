@@ -7,7 +7,10 @@ import "../css/bootstrap.css"
 import "../css/styles.css"
 import Logo from "../images/logo text.png" 
 import Logo2 from "../images/logo pic.png" 
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import ECG from "../images/ecg.jpg"
 
 
@@ -24,90 +27,45 @@ const Hardware = ({history}) => {
   return (
     
     <>
-    <nav className="navbar navbar-expand-lg fixed-top navbar-light">
-      <div className="container">
-      {/* Text Logo - Use this if you don't have a graphic logo */}
-      {/* <a class="navbar-brand logo-text page-scroll" href="index.html">Viso</a> */}
-      {/* Image Logo */}
-      <a className="navbar-brand logo-image" href="/">
-        <img src= {Logo}  />
-      </a>
-      <button
+    <Navbar className="navbar fixed-top navbar-light" expand="lg">
+      <Container className="container">
+      <Navbar.Brand className="navbar-brand logo-image" href="/">
+        <img src= {Logo} />
+      </Navbar.Brand>
+      <Navbar.Toggle
         className="navbar-toggler p-0 border-0"
         type="button"
         data-toggle="offcanvas"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div
-        className="navbar-collapse offcanvas-collapse"
-        id="navbarsExampleDefault"
-      >
-        <ul className="navbar-nav ml-auto">
+        aria-controls="basic-navbar-nav"
+      />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="navbar-nav ml-auto">
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              บริการ<span className="sr-only">(current)</span>
-            </a>
+          <Nav.Link className="nav-link" href="/">
+              บริการ <span className="sr-only">(current)</span>
+            </Nav.Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/about">
+          <Nav.Link className="nav-link" href="/about">
               เกี่ยวกับเรา
-            </a>
+            </Nav.Link>
           </li>
-          {/* <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="dropdown01"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Drop
-            </a>
-            <div className="dropdown-menu" aria-labelledby="dropdown01">
-              <a className="dropdown-item page-scroll" href="services.html">
-                Job Details
-              </a>
-              <div className="dropdown-divider" />
-              <a className="dropdown-item page-scroll" href="terms.html">
-                Terms Conditions
-              </a>
-              <div className="dropdown-divider" />
-              <a className="dropdown-item page-scroll" href="privacy.html">
-                Privacy Policy
-              </a>
-            </div>
-          </li> */}
+            
+            <li className="nav-item">
+            <Nav.Link class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ</Nav.Link>
+            </li>
+
           <li className="nav-item">
-          <a class="nav-link" style={{color: "red"}} href="#" onClick={Signout} >ออกจากระบบ </a>
-          </li>
-          <li className="nav-item">
-          <a className= "mx-3" href="/History">
+            <a className= "mx-3" href="/History">
               <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
           </a>
           </li>
-        </ul>
-        <span className="nav-item social-icons">
-          <span className="fa-stack">
-            <a href="#your-link">
-              <i className="fas fa-circle fa-stack-2x" />
-              <i className="fab fa-facebook-f fa-stack-1x" />
-            </a>
-          </span>
-          <span className="fa-stack">
-            <a href="#your-link">
-              <i className="fas fa-circle fa-stack-2x" />
-              <i className="fab fa-twitter fa-stack-1x" />
-            </a>
-          </span>
-        </span>
-      </div>{" "}
-      {/* end of navbar-collapse */}
-    </div>{" "}
-    {/* end of container */}
-  </nav>{" "}
-
+          
+         
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
 
 
   

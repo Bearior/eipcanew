@@ -39,7 +39,6 @@ const HardwareHistory = ({ history }) => {
     });
 
     const handleClick = () => {
-        // Perform some action here based on the serial number, and then clear the input
         console.log(`Serial number entered: ${serial}`);
         setSerial(serialvalue);
     }
@@ -150,7 +149,7 @@ const HardwareHistory = ({ history }) => {
                 <div id="emailHelp" class="form-text">รหัสเครื่อง 4 ตัวของท่านอยู่ใต้บรรจุภัณฑ์ </div>
                 </div>
               </center>
-              <button className="btn-solid-lg   " onClick={handleClick} >
+              <button className="btn-solid-lg " onClick={handleClick} >
                 ตรวจผลการวัดค่า
                 </button>
   </div>
