@@ -495,7 +495,6 @@
       transform: rotate(360deg);
     }
   }
-  /* a11y */
   .swiper-container .swiper-notification {
     position: absolute;
     left: 0;
