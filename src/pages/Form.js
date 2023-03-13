@@ -63,7 +63,7 @@ export const Forms = ({history}) => {
     },
     {
       img: "https://scontent.fbkk9-2.fna.fbcdn.net/v/t1.15752-9/335501890_174040032056038_49732088598371523_n.webp?stp=dst-webp&_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeG2fmjTsEyrQrcEnbHQOSxJUbn9MgoyZXZRuf0yCjJldvHtRok5_oDeGhTmxE45T5sPUL3Y5Jy1hnnNhbs4YQlC&_nc_ohc=irHobBY6c-sAX_EqTfj&_nc_ht=scontent.fbkk9-2.fna&oh=03_AdRzJx7jOzVWcfyc1o7gXmW5Y7nJHRHr0QZFHFul9s6f5g&oe=643298D2",
-      question: "รู้สึกเหนื่อยง่าย เหนื่อยผิดปกติขณะออกำลังกาย หรือเมื่อออกแรง / เดินขึ้นบันได 2 ชั้น",
+      question: "รู้สึกเหนื่อยง่าย เหนื่อยผิดปกติขณะออกกำลังกาย หรือเมื่อออกแรง / เดินขึ้นบันได 2 ชั้น",
       answer: "yes"
     },
     {
