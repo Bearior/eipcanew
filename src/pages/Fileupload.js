@@ -113,32 +113,6 @@ const handleUpload = async () => {
     </Container>
   </Navbar>
 
-  <header id="header" className="header">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-6 col-xl-5">
-          <div className="bg-gray" style={{padding: "30px", borderRadius: "10px"}}>
-              <h1 className="h1-large">
-                Upload ECG <br />
-              </h1>
-                <label for="formFileLg" class="form-label">Please choose your file then press upload <br></br>(File format : JPG, PNG, JPEG only)</label>
-                <input class="form-control form-control-lg col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn-solid-lg px-6 mx-4" onClick={handleUpload} disabled={!file}>Upload</button> <br></br> 
-                </div>          
-             </div>        
-           </div>     
-          <div className="col-lg-6 col-xl-7">
-            <div className="" style={{maxHeight: "50%", minHeight: "50%"}}>
-              <img src={file ? base64 : Logo2} class="img-thumbnail img-fluid px-3 my-4" /> <br></br>
-            </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-  <center>
   <header className="p-5 bg-gray mb-5">
     <div className="container">
       <div className="row">
@@ -172,13 +146,60 @@ const handleUpload = async () => {
       </div>
     </div>
   </header>
+
+ 
+  
+
+  
+
+
+  <header className="p-4 bg-gray mb-5 " style={{marginTop: "10%"}}> 
+    <div className="container">
+      <div className="row">
+        <div className="col-xl-10 offset-xl-1">
+          <h1> UPLOAD</h1>
+          
+        </div>{" "}
+        {/* end of col */}
+      </div>{" "}
+      {/* end of row */}
+    </div>{" "}
+    {/* end of container */}
+  </header>{" "}
+  <header id="header" className="">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 col-xl-5">
+          <div className="bg-gray" style={{padding: "30px", borderRadius: "10px"}}>
+              <h1 className="h1-large">
+                Upload ECG <br />
+              </h1>
+                <label for="formFileLg" class="form-label">Please choose your file then press upload <br></br>(File format : JPG, PNG, JPEG only)</label>
+                <input class="form-control form-control-lg col-form-label2  mb-3" id="formFileLg" type="file" onChange={handleChange}/>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn-solid-lg px-6 mx-4" onClick={handleUpload} disabled={!file}>Upload</button> <br></br> 
+                </div>          
+             </div>        
+           </div>     
+          <div className="col-lg-6 col-xl-7">
+            <div className="" style={{maxHeight: "50%", minHeight: "50%"}}>
+              <img src={file ? base64 : Logo2} class="img-thumbnail img-fluid px-3 my-4" /> <br></br>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  
+ 
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
     <br/>
-  </center>
+  
   {/* Footer */}
   <div className="footer bg-gray">
     <div className="container">

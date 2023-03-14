@@ -262,6 +262,9 @@ const Frame = ({ Results, Status, Time, File, History}) => {
           <a  className="btn-solid-lg page-scroll " href="/SuggestionBad">
           ข้อแนะนำ
           </a>
+          <a  className="btn-solid-lg page-scroll mx-5" href="/SuggestionHospital">
+          ค้นหาโรงพยาบาล
+          </a>
           </div>
     )}
     <br/>
