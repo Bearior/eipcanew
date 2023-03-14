@@ -10,7 +10,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from "../images/logo text.png" 
  import Logo2 from "../images/logo pic.png" 
 
-const SuggestionHealthy = ({history}) => {
+const SuggestionHospital = ({history}) => {
   const { currentUser } = useContext(AuthContext);
   const [file, setFile] = useState(null);
   const [base64, setBase64] = useState(null);
@@ -293,4 +293,4 @@ const handleUpload = async () => {
   );
 };
 
-export default withRouter(SuggestionHealthy);
+export default withRouter(SuggestionHospital);

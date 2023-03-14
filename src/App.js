@@ -57,7 +57,7 @@ function App() {
           <Route exact path="/Hospital" component={Hospital}/>
           <Route exact path="/HardwareHistory" component={HardwareHistory}/>
           <Route exact path="/HardwareManual" component={HardwareManual}/>
-          
+
         </div>
       </Router>
     </AuthProvider>
