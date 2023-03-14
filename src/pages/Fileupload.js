@@ -136,6 +136,125 @@ const handleUpload = async () => {
       </div>
     </div>
   </header>
+
+
+  <center>
+  <header className="p-5 bg-gray mb-5">
+    <div className="container">
+      <div className="row">
+        <div className="col-xl-10 offset-xl-1">
+          <h1>ตัวอย่างรูปแบบภาพที่ใช้ UPLOAD</h1>
+          
+        </div>{" "}
+        {/* end of col */}
+      </div>{" "}
+      {/* end of row */}
+    </div>{" "}
+    {/* end of container */}
+  </header>{" "}
+  
+  <header id="header" className="">
+    <div className="container ">
+      <div className="row">
+        <div className="col-lg-6 col-xl-5">
+          <div className="bg-gray " style={{padding: "30px", borderRadius: "10px"}}>
+              <h1 className="h1-large">
+                ตัวอย่างภาพที่ใช้ Upload <br />
+              </h1>
+                <label for="formFileLg" class="form-label " style={{fontSize: "20px"}}>1. ภาพกราฟคลื่นไฟฟ้าหัวใจแบบ 12 lead <br></br>2. ภาพจำเป็นต้องเห็นครบทุก node ครบถ้วน ชัดเจน <br></br> 3. ภาพต้องเป็นแนวนอนขนาดอัตราส่วน <br/> ความกว้างต่อความยาวประมาณ 16 ต่อ 9</label>          
+             </div>        
+           </div>     
+          <div className="col-lg-6 col-xl-7">
+            <div>
+              <img src="https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.15752-9/254616585_239356464849930_7414990640685496393_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFIfgCZe04E6x4HouZrjQ6BNFOG7FztNis0U4bsXO02K8sjorldhNlS670rwueSU-QwyK9p6uQjszVh5tUk1pkN&_nc_ohc=lQO1SKiNmoQAX-eVFWs&_nc_ht=scontent.fcnx1-1.fna&oh=03_AdTRS9ulqj8W1JtsZTb4t07D01J8JtIwyTkeAA1mgVPPnw&oe=6437B8D8" class="" style={{width: "85%" , borderRadius: "10px"}} /> <br></br>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+  </center>
+  {/* Footer */}
+  <div className="footer bg-gray">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12">
+          <div className="footer-col first">
+            <h6>เกี่ยวกับ EIPCA</h6>
+            <p className="p-small">
+              EIPCA ย่อมาจาก Electrocardiogram Interpretation Pattern for
+              Symptom Predictions of Arrythmia. หรือ
+              โปรแกรมเพื่อช่วยคัดกรองภาวะหัวใจวายเฉียบพลัน
+              <br />
+              (โรคใหลตาย)
+              อันเนื่องมาจากภาวะหัวใจเต้นผิดจังหวะจากกราฟคลื่นไฟฟ้าหัวใจด้วยปัญญาประดิษฐ์
+            </p>
+          </div>{" "}
+          {/* end of footer-col */}
+          <div className="footer-col second">
+            <h6>ติดต่อเรา</h6>
+            <ul className="list-unstyled li-space-lg p-small">
+              <p>
+                <i className="fa fa-map-marker-alt mr-2" />
+                The Prince Royal Collage, Thailand
+              </p>
+              <p>
+                <i className="fa fa-phone-alt mr-2" />
+                0-5324-2038, 0-5324-2550
+              </p>
+              <p>
+                <i className="fa fa-envelope mr-2" />
+                prccontact@prc.ac.th
+              </p>
+            </ul>
+          </div>{" "}
+          {/* end of footer-col */}
+          <div className="footer-col third">
+            <span className="fa-stack">
+              <a href="#your-link">
+                <i className="fas fa-circle fa-stack-2x" />
+                <i className="fab fa-facebook-f fa-stack-1x" />
+              </a>
+            </span>
+            <span className="fa-stack">
+              <a href="#your-link">
+                <i className="fas fa-circle fa-stack-2x" />
+                <i className="fab fa-twitter fa-stack-1x" />
+              </a>
+            </span>
+            <span className="fa-stack">
+              <a href="#your-link">
+                <i className="fas fa-circle fa-stack-2x" />
+                <i className="fab fa-pinterest-p fa-stack-1x" />
+              </a>
+            </span>
+            <span className="fa-stack">
+              <a href="#your-link">
+                <i className="fas fa-circle fa-stack-2x" />
+                <i className="fab fa-instagram fa-stack-1x" />
+              </a>
+            </span>
+            <p className="p-small">
+              We would love to hear from you{" "}
+              <a href="">
+                <strong>prccontact@prc.ca.th</strong>
+              </a>
+            </p>
+          </div>{" "}
+          {/* end of footer-col */}
+        </div>{" "}
+        {/* end of col */}
+      </div>{" "}
+      {/* end of row */}
+    </div>{" "}
+    {/* end of container */}
+  </div>{" "}
+  {/* end of footer */}
       
     </>
   );
