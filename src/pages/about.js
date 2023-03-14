@@ -205,83 +205,17 @@ const About = ({history}) => {
           {/* end of text-container */}
         </div>{" "}
         {/* end of col */}
-        <div className="col-lg-6">
-          <div className="image-container">
-          <>
-          <div className="py-5 team4">
-  <div className="container">
-    <div className="row justify-content-center mb-4">
-      <div className="col-md-7 text-center">
-       
+
+
+        {/* ----------------Specialist --------------------*/}
+
+        
+
       </div>
+
     </div>
-    <div className="row">
-      {/* column  */}
-      <div className="col-lg-3 mb-4">
-        {/* Row */}
-        <div className="row">
-          <div className="col-md-12">
-            <img
-              src="https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.15752-9/335136084_1239034713704792_9178555849082605956_n.png?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeGaq_UjLBYOViU7jT8OlMeI17tWC1gshwzXu1YLWCyHDFwVdHTiyA7TdbucX2G4EmdM56qRSNXs-2fOWyzQvaQt&_nc_ohc=eaP5KULJz-8AX95TyN_&_nc_ht=scontent.fcnx1-1.fna&oh=03_AdS99isspn9zdnkalTpWGc9Ab8_mCPp5Y6qR8uzBCU972w&oe=6431421F"
-              alt="wrapkit"
-              className=" rounded-circle" style={{width: "200%"}}
-            />
-          </div>
-          <div className="col-md-12 text-center">
-            <div className="pt-2">
-              <h5 className="mt-4 font-weight-medium mb-0" style={{width: "200%" , marginLeft: "10%"}}>Michael Doe</h5>
-              <h6 className="subtitle mb-3" style={{width: "200%" , marginLeft: "10%"}}>Property Specialist</h6>
-              
-              
-            </div>
-          </div>
-        </div>
-        {/* Row */}
-      </div>
-      {/* column  */}
-      {/* column  */}
-      <div className="col-lg-3 mb-4">
-        {/* Row */}
-        <div className="row">
-          <div className="col-md-12">
-            <img 
-              src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg"
-              alt="wrapkit"
-              className="rounded-circle " style={{width: "200%" , marginLeft: "100%"}}
-            />
-          </div>
-          <div className="col-md-12 text-center">
-            <div className="pt-2">
-              <h5 className="mt-4 font-weight-medium mb-0"  style={{width: "200%" , marginLeft: "100%"}}>Michael Doe</h5>
-              <h6 className="subtitle mb-3" style={{width: "200%" , marginLeft: "100%"}} >Property Specialist</h6>
-              
-              
-            </div>
-          </div>
-        </div>
-        {/* Row */}
-      </div>
-      {/* column  */}
-      {/* column  */}
-      
-      {/* column  */}
-      {/* column  */}
-      
-    </div>
+
   </div>
-</div>
-
-          </>
-
-          </div>{" "}
-          {/* end of image-container */}
-        </div>{" "}
-        {/* end of col */}
-      </div>{" "}
-      {/* end of row */}
-    </div>{" "}
-    {/* end of container */}
-  </div>{" "}
   
 
   

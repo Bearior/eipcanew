@@ -173,7 +173,98 @@ const SuggestionBad = ({history}) => {
      img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.6435-9/53535804_2330713130281217_7144079953980555264_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHwg1fbrUHsir_t2Ppr-vBvq6zGYQzSgM2rrMZhDNKAzRuu7nu7k0SgLxR30XzGSg2epyIc259o5YWosC5TU1V1&_nc_ohc=Ms-PgZXEq-MAX8mnugg&_nc_oc=AQkkAomtzrXDD1MhtAp4QEQu1GAZnmc8Ep463IyVViEuv99npYE2QR9uOPbYczKH-oE&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfA4tduhUZwolpVtgaLzB3vNKlT9BqRg-xM86qX9S1Ah7g&oe=6433A52B",
      map: "https://www.google.com/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B9%8D%E0%B8%B2%E0%B9%81%E0%B8%AB%E0%B8%87/@13.7636615,100.6424582,15.92z"
    },
-   { id: 13, 
+   { id: 6, 
+    name: 'โรงพยาบาลกรุงเทพภูเก็ต', 
+    city: 'ภูเก็ต', 
+    location: 'https://www.phukethospital.com/th/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t39.30808-6/327155210_3485766961742573_1579560132984937655_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHFrzZHtAUFmgJiuEZJ0JX6RJ3xH2zJfdJEnfEfbMl90oUew9gnDg19z7ChZQ1Jb5f4ufVhkya7iD850n-qvqmO&_nc_ohc=SY19ECfUWHoAX8vpQCV&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfAWYRMLyCgNQoV1Eyxq17hm6ZJSohi-Aq6KBS7kPRwyYg&oe=6415895C",
+    map: "https://www.google.co.th/maps/place/Bangkok+Hospital+Phuket/@7.9039809,98.3740986,17z/data=!3m1!4b1!4m5!3m4!1s0x3050319642447ddd:0x1912f364775aed3a!8m2!3d7.9039756!4d98.3762926"
+  },
+  { id: 6, 
+    name: 'โรงพยาบาลกรุงเทพพัทยา', 
+    city: 'พัทยา', 
+    location: 'https://www.bangkokpattayahospital.com/th/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t39.30808-6/306287004_445437987617382_2944155962451828294_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH8R8saPbElNYNz2wbrPT--od-d-FMUkXuh3534UxSRexPwJfgc6hVJRx5Q3dGClT7EH85GC1OIwWyTcR8QuWVG&_nc_ohc=llVp-LXTLw0AX81zTbU&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfABzzzHth_30Cp8nHcI3bRJJO644hXIhMAoJ7UcK57s7w&oe=64141B66",
+    map: "https://www.google.co.th/maps/place/Bangkok+Hospital+Pattaya/@12.9538298,100.9033555,17z/data=!3m1!4b1!4m5!3m4!1s0x3102be152b37142d:0x81a466188fa77aa6!8m2!3d12.9538246!4d100.9055495"
+  },
+  { id: 13, 
+    name: 'โรงพยาบาลพระราม 9', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.praram9.com/?utm_term=%E0%B9%82%E0%B8%A3%E0%B8%87%20%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A1%209&utm_campaign=sem-awo-traffic-brand&utm_source=adwords&utm_medium=ppc&hsa_acc=3237537901&hsa_cam=19673555908&hsa_grp=145556731426&hsa_ad=647925528380&hsa_src=g&hsa_tgt=kwd-868150103438&hsa_kw=%E0%B9%82%E0%B8%A3%E0%B8%87%20%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A1%209&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwk7ugBhDIARIsAGuvgPYs7WO56-_TNwbnFNuq2p40L9CLUaMSdSYG9Hkju1R_SSSF-J-6X8AaAomuEALw_wcB',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.6435-9/55551862_2225927714109136_2386663139694346240_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeH3c51YS3eswhaquk66AaNnKidevLRkKN8qJ168tGQo30i3054_RGsa8qg-_pZL8LqlHYHGs3IKltkB7AFRufZh&_nc_ohc=F4sABqPyXukAX85FIg2&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfDWSg0-Q7X6G4KGnHGMwkXGbjQfj1Hg-voDVywkAEYY6w&oe=64374B62",
+    map: "https://www.google.co.th/maps/place/Praram+9+Hospital/@13.7530601,100.5688253,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29ef4f449e749:0xb05ccd35cc25e092!8m2!3d13.7530549!4d100.5710193"
+  },
+  { id: 14, 
+    name: 'โรงพยาบาลปิยะเวท', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://piyavate.com/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t39.30808-6/311045046_480108800823067_7501928069775791827_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFGeHX87UNDmrNUO15GDT0gMAVC7OIydYswBULs4jJ1i16Yz5-kRFt5GDHBLCfbk7YeW5Je-r376nyAl9Xzta1r&_nc_ohc=30XeejaPKlIAX_Sw031&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfDMwcsKi2feekw0LNQx6pfoAfK-K6ELfDCqRlvsApj2uw&oe=6415CFA2",
+    map: "https://www.google.co.th/maps/place/Piyavate+Hospital/@13.7533874,100.5778907,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29e5e7726e455:0x4b1ab49dca7cb646!8m2!3d13.7533822!4d100.5800847"
+  },
+  { id: 15, 
+    name: 'โรงพยาบาลวิชัยยุทธ', 
+    city: 'กรุงเทพมหานคร', 
+    location: '',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t39.30808-6/272747211_1917344055138360_3443626163903873946_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHZDfp2M5PSsiaE5cr3bJZJS76bi2iiy_ZLvpuLaKLL9haiJKIsqtdcPWcnGVRe7_H0hGbTgxzVBhCaIupfII9G&_nc_ohc=uPjVYNyc41cAX8X67PA&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfAg-oiFwE9t9_5Qab1KNtwW2iAu-Jl9a83adZDUDC2Etw&oe=64140140",
+    map: "https://www.google.co.th/maps/place/Vichaiyut+Hospital/@13.7806262,100.5307382,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29c01bf84a57d:0x6f678539a140ccd9!8m2!3d13.780621!4d100.5329322"
+  },
+  { id: 16, 
+    name: 'โรงพยาบาลเจ้าพระยา', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.chaophya.com/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.6435-9/189144530_4138109779585566_9114055755830523829_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFaz4AOxjK6ka2rvh1z16saBB2HN-N_Xa8EHYc3439dr0Dw1xLIJuE4AO85X3bYlyGJWWMrRnJqnlqcv6Z4G6fT&_nc_ohc=QfmrVE-FjfwAX_2tSAJ&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfC7Wfd26cYek-faIoDW-yXgYtrJ6T0H3T3g6A8GR7QKMg&oe=64376D22",
+    map: "https://www.google.co.th/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B2/@13.7799495,100.4698488,18.19z"
+  },
+  { id: 17, 
+    name: 'โรงพยาบาลพญาไท 2', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.phyathai.com/branch/PYT2',
+    img: "https://heretohealproject.com/wp-content/uploads/2022/09/85.-%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9E%E0%B8%8D%E0%B8%B2%E0%B9%84%E0%B8%972.png",
+    map: "https://www.google.co.th/maps/place/Phyathai+2+Hospital/@13.7703996,100.5387634,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29eaff36c43ff:0xfa7be2811d3a6387!8m2!3d13.7703944!4d100.5409574"
+  },
+  { id: 18, 
+    name: 'โรงพยาบาลสมิติเวช', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.samitivejhospitals.com/th',
+    img: "https://www.samitivejchonburi.com/upload/doctor_photos/logo_square.jpg",
+    map: "https://www.google.co.th/maps/search/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%AA%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%8A/@13.7350832,100.5694515,15.84z"
+  },
+  { id: 19, 
+    name: 'โรงพยาบาลธนบุรี 1', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.thonburihospital.com/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.6435-9/35544085_1856839507671122_3136981088648298496_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHWBKEqnziP76MH6rB9_otgOCxf5qQQGgw4LF_mpBAaDC1vdLNFRNZU-m9qcCBtY5iWDWThhbFQhCU3vd_zQquk&_nc_ohc=C-yWLUIu6lgAX9SNLz8&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfBa63xV2tGP3qzsrTh6RNT2iXiU4cO8JmPcZmjThgyfKA&oe=6437577A",
+    map: "https://www.google.co.th/maps/place/Thonburi+Hospital/@13.7527312,100.4776802,17z/data=!3m1!4b1!4m5!3m4!1s0x30e299a410db3aeb:0x68733fd8e885ed0c!8m2!3d13.752726!4d100.4798742"
+  },
+  { id: 20, 
+    name: 'โรงพยาบาลพญาไท 3', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://phyathai3hospital.com/home/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t39.30808-6/309861959_197471999314079_2375597537882036280_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEUmrEk5Bxxaoe6ywawUw1lB5tTqN26y8kHm1Oo3brLybWIrytLtFSggUzB_EWRfmvdbARJ42dkM1UjirvQ8BO-&_nc_ohc=XyZ9SL6kEmIAX-SfdB9&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfDPkysNCoFCTmNxWN_3LJXw6ChGQ96BkIxyoRy4eLDDcg&oe=64152A96",
+    map: "https://www.google.co.th/maps/place/Phyathai+3+Hospital/@13.7229782,100.4618814,17z/data=!3m1!4b1!4m5!3m4!1s0x30e2984634badc79:0xd5f0e330080118f4!8m2!3d13.722973!4d100.4640754"
+  },
+  { id: 21, 
+    name: 'โรงพยาบาลวิภาวดี', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.vibhavadi.com/',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.6435-9/50234186_2130690866976841_8189332246293905408_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_eui2=AeE84B10W9uaVPXd-jSSFZ4TFkOmFgvatKwWQ6YWC9q0rIRNl7edQdSUqJWA3lL3iwmGCMJ0zv6eXQwvJNJfFvse&_nc_ohc=T8iaaik9WssAX9ajmdP&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfAd60HocaZgIFUhgMFGcp4zawr3kRi3FSoxmgba1w1sEA&oe=643755F8",
+    map: "https://www.google.co.th/maps/place/Vibhavadi+Hospital/@13.8462595,100.5599299,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29ce7c2c0e5cd:0xf936935a200bf7af!8m2!3d13.8462543!4d100.5621239"
+  },
+  { id: 22, 
+    name: 'โรงพยาบาลเกษมราษฎร์ ประชาชื่น', 
+    city: 'กรุงเทพมหานคร', 
+    location: 'https://www.kasemrad.co.th/Prachachuen/th/site/packages_and_promotions',
+    img: "https://scontent.fcnx1-1.fna.fbcdn.net/v/t1.6435-9/166817290_5186228564785104_8791261196510276969_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGwE5gIMiDyIYY_UNcl7kw42RLfwhUtI7rZEt_CFS0juiJHES-2rEyGJo6FiAPU9GXCWnZ7aYFKT5v9teew1xAE&_nc_ohc=q7QqH2ZbYysAX_AZVk2&_nc_ht=scontent.fcnx1-1.fna&oh=00_AfAeEx1pj_bVkirvByD_Fy3KHmNIIQcZdLcWotm1oiOCwg&oe=64377EC5",
+    map: "https://www.google.co.th/maps/place/Kasemrad+Prachachuen+Hospital/@13.831699,100.5368034,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29dc7e1bb556b:0x10a210f32d43c8a3!8m2!3d13.8316938!4d100.5389974"
+  },
+  { id: 1, 
+    name: 'โรงพยาบาลชลบุรี', 
+    city: 'ชลบุรี', 
+    location: 'http://www.cbh.moph.go.th/cbh2020/',
+    img: "http://www.cbh.moph.go.th/cbhweb2/file/logo/logo.png",
+    map: "https://www.google.co.th/maps/place/Chonburi+Hospital/@13.3519914,100.9799793,17z/data=!3m1!4b1!4m5!3m4!1s0x311d35804629950f:0xf03d84bc0dd45c0!8m2!3d13.3519862!4d100.9821733"
+  },
+   { id: 23, 
      name: 'โรงพยาบาลราชวิถี', 
      city: 'กรุงเทพมหานคร', 
      location: 'https://www.rajavithi.go.th/',
@@ -305,23 +396,90 @@ const SuggestionBad = ({history}) => {
   <br/>
   <br/>
   <div className="app container p-5">
-      <h1 className="text-center mb-2">รายนามโรงพยาบาล ที่จัดเป็น "ศูนย์หัวใจ" ทั่วประเทศ</h1>
+      <h1 className="text-center mb-2">รายนามโรงพยาบาล ที่จัดเป็น "ศูนย์หัวใจ" 38 แห่ง ทั่วประเทศ</h1>
       <p className="text-center mb-5 fs-5 " style={{}} >อ้างอิงจาก: สมาคมแพทย์โรคหัวใจแห่งประเทศไทยในพระบรมราชูปถัมภ์</p>
       <div class="mb-3">
          <p className=" fs-4 " style={{color: "red"}} class="form-label">เลือกจังหวัดที่คุณอยู่ หรือจังหวัดใกล้เคียง</p>
            <select id="state" style={{borderRadius: "10px" , width: "20%"}}
              onChange={handleChange} class="form-select mb-5">
-                <option value=""></option>
-                <option value="สงขลา">สงขลา</option>
                 <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
-                <option value="นนทบุรี">นนทบุรี</option>
-                <option value="อุบลราชธานี">อุบลราชธานี</option>
-                <option value="จันทบุรี">จันทบุรี</option>
-                <option value="สุราษฏร์ธานี">สุราษฏร์ธานี</option>
+                <option value="สุราษฏร์ธานี">กระบี่</option>
+                <option value="พิษณุโลก">กาญจนบุรี</option>
+                <option value="ขอนแก่น">กาฬสินธุ์</option>
+                <option value="พิษณุโลก">กำแพงเพชร</option>
                 <option value="ขอนแก่น">ขอนแก่น</option>
-                <option value="พิษณุโลก">พิษณุโลก</option>
+                <option value="จันทบุรี">จันทบุรี</option>
+                <option value="ปทุมธานี">	ฉะเชิงเทรา</option>
+                <option value="ชลบุรี">	ชลบุรี</option>
+                <option value="กรุงเทพมหานคร">	ชัยนาท</option>
+                <option value="ขอนแก่น">	ชัยภูมิ</option>
+                <option value="สุราษฏร์ธานี">	ชุมพร</option>
+                <option value="เชียงใหม่">	เชียงราย</option>
                 <option value="เชียงใหม่">เชียงใหม่</option>
+                <option value="สงขลา">	ตรัง</option>
+                <option value="จันทบุรี">	ตราด</option>
+                <option value="เชียงใหม่">	ตาก</option>
+                <option value="ปทุมธานี">	นครนายก</option>
+                <option value="นนทบุรี">นนทบุรี</option>
+                <option value="นนทบุรี">	นครปฐม</option>
+                <option value="ขอนแก่น">	นครพนม</option>
+                <option value="ปทุมธานี">	นครราชสีมา</option>
+                <option value="สุราษฏร์ธานี">	นครศรีธรรมราช</option>
+                <option value="พิษณุโลก">	นครสวรรค์</option>
+                <option value="สงขลา">	นราธิวาส</option>
+                <option value="เชียงใหม่">	น่าน</option>
+                <option value="ขอนแก่น">	บึงกาฬ</option>
+                <option value="อุบลราชธานี">	บุรีรัมย์</option>
+                <option value="กรุงเทพมหานคร">	ประจวบคีรีขันธ์	</option>
+                <option value="กรุงเทพมหานคร">	ปราจีนบุรี</option>
+                <option value="สงขลา">	ปัตตานี</option>
                 <option value="ปทุมธานี">ปทุมธานี</option>
+                <option value="นนทบุรี"> พระนครศรีอยุธยา</option>
+                <option value="พิษณุโลก">พิษณุโลก</option>
+                <option value="เชียงใหม่">	พะเยา</option>
+                <option value="สุราษฏร์ธานี">	พังงา</option>
+                <option value="สงขลา">	พัทลุง</option>
+                <option value="พิษณุโลก">	พิจิตร</option>
+                <option value="กรุงเทพมหานคร">	เพชรบุรี</option>
+                <option value="พิษณุโลก">	เพชรบูรณ์</option>
+                <option value="เชียงใหม่">	แพร่</option>
+                <option value="สุราษฏร์ธานี">	ภูเก็ต</option>
+                <option value="ขอนแก่น">	มหาสารคาม</option>
+                <option value="อุบลราชธานี">	มุกดาหาร</option>
+                <option value="เชียงใหม่">	แม่ฮ่องสอน</option>
+                <option value="อุบลราชธานี">	ยโสธร</option>
+                <option value="สงขลา">	ยะลา</option>
+                <option value="อุบลราชธานี">	ร้อยเอ็ด</option>
+                <option value="สุราษฏร์ธานี">	ระนอง</option>
+                <option value="จันทบุรี">	ระยอง</option>
+                <option value="กรุงเทพมหานคร">	ราชบุรี</option>
+                <option value="กรุงเทพมหานคร">	ลพบุรี</option>
+                <option value="เชียงใหม่">	ลำปาง</option>
+                <option value="เชียงใหม่">	ลำพูน</option>
+                <option value="พิษณุโลก">	เลย</option>
+                <option value="อุบลราชธานี">	ศรีสะเกษ</option>
+                <option value="ขอนแก่น">	สกลนคร</option>
+                <option value="สงขลา">สงขลา</option>
+                <option value="สุราษฏร์ธานี">สุราษฏร์ธานี</option>
+                <option value="สงขลา">	สตูล</option>
+                <option value="กรุงเทพมหานคร">	สมุทรปราการ</option>
+                <option value="กรุงเทพมหานคร">	สมุทรสงคราม</option>
+                <option value="กุงเทพมหานคร">	สมุทรสาคร</option>
+                <option value="จันทบุรี">	สระแก้ว</option>
+                <option value="ปทุมธานี">	สระบุรี</option>
+                <option value="นนทบุรี">สิงห์บุรี</option>
+                <option value="พิษณุโลก">	สุโขทัย</option>
+                <option value="กรุงเทพมหานคร">	สุพรรณบุรี</option>
+                <option value="อุบลราชธานี">	สุรินทร์</option>
+                <option value="ขอนแก่น">	หนองคาย</option>
+                <option value="ขอนแก่น">	หนองบัวลำภู</option>
+                <option value="ปทุมธานี">	อ่างทอง</option>
+                <option value="อุบลราชธานี">	อำนาจเจริญ</option>
+                <option value="ขอนแก่น">	อุดรธานี</option>
+                <option value="พิษณุโลก">	อุตรดิตถ์</option>
+                <option value="พิษณุโลก">	อุทัยธานี</option>
+                <option value="อุบลราชธานี">อุบลราชธานี</option>
+
             </select>
       </div>
       <table class="table table-hover table-bordered p-5 text-center" style={{borderRadius: "10px"}}>

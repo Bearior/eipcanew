@@ -47,7 +47,7 @@ const HardwareHistory = ({ history }) => {
 
     
     useEffect(() => {
-      const unsubscribe = db.collection("ECGHARDWARE").where("serial", "==", serial)
+      const unsubscribe = db.collection("DATAEKG1").where("serial_id", "==", serial)
     .onSnapshot((querySnapshot) => {
       let dataArray = [];
       querySnapshot.forEach((doc) => {
@@ -192,7 +192,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
       
     <p>
       
-    {Status === "NotPredict" && (
+    {Status === "Notplotted" && (
       <p className="bg-warning py-3 fs-5" style={{ marginLeft: "15%"}} >
         <div className="fw-bold">Date&Time : {Time}</div> <br />
         <div>Status : {Status}</div> <br />
@@ -206,7 +206,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
       <p className="bg-light py-3 fs-5" style={{ marginLeft: "15%"}}>
         <div className="fw-bold">Date&Time : {Time}</div> <br />
         <div>Status : {Status}</div> <br />
-        <button className="btn-solid-lg" onClick={toggleData}>
+        <button className="btn-solid-lg " onClick={toggleData}>
           {isDataShown ? "Hide Results" : "Show Results"}
         </button>
        
@@ -216,9 +216,10 @@ const Frame = ({ Results, Status, Time, File, History}) => {
 
   {isDataShown && Status === "Plotted and Predicted" && (
     <div className="py-3 fs-5" style={{backgroundColor: "", marginLeft:"15%"}}>
-      <p>ผลการตรวจสอบ</p>
+      <h2>ผลการตรวจสอบ</h2>
         {Results === "Normal" ? (
           <div>
+            <h5 clasName="my-2" style={{color: "green"}}>คุณไม่มีความเสี่ยง</h5>
         <img
           className="img-fluid img-thumbnail"
           style={{
@@ -239,6 +240,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
       
     ) : (
       <div>
+        <h5 clasName="my-2" style={{color: "red"}}>คุณมีความเสี่ยง</h5>
          <img
           className="img-fluid img-thumbnail mx-5"
           style={{

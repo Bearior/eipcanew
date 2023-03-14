@@ -90,14 +90,19 @@ export const Forms = ({history}) => {
         (answer, index) => answer === questions[index].answer
       );
       let result;
+      let resultimg;
       if (correctAnswers.length > 10) {
         result = "คุณมีความเสี่ยงสูงที่จะเป็นโรคหัวใจ!";
+        resultimg = "https://media2.giphy.com/media/5ULFCfpKmsM529rkwR/giphy.gif?cid=ecf05e4728xzz2ftvd6m4hmdc0z1ac4f2ae14q7hxojw4nrw&rid=giphy.gif&ct=g"
       } else if (correctAnswers.length > 8) {
         result = "คุณมีความเสี่ยงปานกลางที่จะเป็นโรคหัวใจ!";
+        resultimg = "https://media4.giphy.com/media/T9YRoIuBJchO7u8a6F/giphy.gif?cid=ecf05e47b3hvifkkcw5uoo9qp0scy29i0rhb31uvab5r9qq0&rid=giphy.gif&ct=g"
       } else if (correctAnswers.length > 5) {
         result = "คุณมีความเสี่ยงต่ำที่จะเป็นโรคหัวใจ!";
+        resultimg = "https://media4.giphy.com/media/T9YRoIuBJchO7u8a6F/giphy.gif?cid=ecf05e47b3hvifkkcw5uoo9qp0scy29i0rhb31uvab5r9qq0&rid=giphy.gif&ct=g"
       } else {
         result = "คุณไม่มีความเสี่ยงที่จะเป็นโรคหัวใจ";
+        resultimg = "https://media0.giphy.com/media/jGR23trwtcmXvK9AMy/giphy.gif?cid=ecf05e47bkemwemycxmcgxxhjtjpj9pli6q42lxo6lk74t17&rid=giphy.gif&ct=g"
       }
       console.log(result)
 
@@ -105,7 +110,8 @@ export const Forms = ({history}) => {
       return(
       
       <div>
-        <h2 style={{marginTop : "20%" ,padding: "50px", borderRadius: "10px"}}  className="bg-gray">{result}</h2>
+        <img src={resultimg} style={{width: "20%" , marginTop: "1%" , borderRadius: "10px"}}/>
+        <h2 style={{marginTop : "1%" ,padding: "50px", borderRadius: "10px"}}  className="bg-gray">{result}</h2>
         <a  className="btn-solid-lg page-scroll " style={{marginTop : "3%"}} href="/upload">
               ตรวจสอบคลื่นไฟฟ้าหัวใจด้วย AI
         </a>
@@ -119,7 +125,7 @@ export const Forms = ({history}) => {
       // Show current question
       const question = questions[currentQuestion];
       return (
-        <div style={{marginTop: "15%",padding: "30px", borderRadius: "10px"}} className="bg-gray">
+        <div style={{marginTop: "20px",padding: "30px", borderRadius: "10px"}} className="bg-gray">
           <img style={{marginBottom: "3%" , borderRadius: "10px" , width: "30%"}} src = {question.img}/>
           <h2>{question.question}</h2>
           <button className="mx-3 btn-solid-lg" onClick={() => handleAnswer("yes")}>ใช่</button>
@@ -187,6 +193,19 @@ export const Forms = ({history}) => {
     </Container>
   </Navbar>
   <center>  
+   {/* Header */}
+  <header className="ex-header bg-gray">
+    <div className="container">
+      <div className="row">
+        <div className="col-xl-10 offset-xl-1">
+          <h1>แบบประเมินความเสี่ยงการเกิดโรคหัวใจ </h1>
+        </div>{" "}
+        {/* end of col */}
+      </div>{" "}
+      {/* end of row */}
+    </div>{" "}
+    {/* end of container */}
+  </header>{" "}
     
     <div>{renderQuiz()}</div>
     

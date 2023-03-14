@@ -12,6 +12,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo2 from "../images/logo pic.png"
+import { minimum } from "@tensorflow/tfjs";
 
 
 const History = ({ history }) => {
@@ -206,9 +207,10 @@ const Frame = ({ Results, Status, Time, File, History}) => {
 
   {isDataShown && Status === "Predicted" && (
     <div className="py-3 fs-5" style={{backgroundColor: "", marginLeft:"15%"}}>
-      <p>ผลการตรวจสอบ</p>
+      <h2>ผลการตรวจสอบ</h2>
         {Results === "Normal" ? (
           <div>
+            <h5 clasName="my-2" style={{color: "green"}}>คุณไม่มีความเสี่ยง</h5>
         <img
           className="img-fluid img-thumbnail"
           style={{
@@ -229,6 +231,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
       
     ) : (
       <div>
+        <h5 clasName="my-2" style={{color: "red"}}>คุณมีความเสี่ยง โปรดอ่านข้อแนะนำ</h5>
          <img
           className="img-fluid img-thumbnail mx-5"
           style={{
