@@ -250,7 +250,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
                 src="https://ecgwaves.com/wp-content/uploads/2017/03/brugada-syndrome-ecg-criteria-characteristics-brugadas-type-1-2-3.jpg"/>
           <br/>
           <br/>
-          <a  className="btn-solid-lg page-scroll " href="/SuggestionBad">
+          <a  className="btn-solid-lg page-scroll mx-5 " href="/SuggestionBad">
           ข้อแนะนำ
           </a>
           <a  className="btn-solid-lg page-scroll " href="/SuggestionHospital">

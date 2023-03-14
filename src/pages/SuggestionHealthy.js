@@ -133,6 +133,12 @@ const handleUpload = async () => {
   {/* end of ex-header */}
   {/* end of header */}
   {/* Basic */}
+    <center>
+  <img
+            src="https://media0.giphy.com/media/jGR23trwtcmXvK9AMy/giphy.gif?cid=ecf05e47bkemwemycxmcgxxhjtjpj9pli6q42lxo6lk74t17&rid=giphy.gif&ct=g"
+            width="10%"
+          />
+    </center>
  
   {/* Basic */}
   <div className="ex-basic-1 pt-4">

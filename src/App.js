@@ -54,6 +54,7 @@ function App() {
           <Route exact path="/Quiz" component={Quiz}/>
           <Route exact path="/SuggestionHealthy" component={SuggestionHealthy}/>
           <Route exact path="/SuggestionHospital" component={SuggestionHospital}/>
+          <Route exact path="/SuggestionBad" component={SuggestionBad}/>
           <Route exact path="/Hospital" component={Hospital}/>
           <Route exact path="/HardwareHistory" component={HardwareHistory}/>
           <Route exact path="/HardwareManual" component={HardwareManual}/>

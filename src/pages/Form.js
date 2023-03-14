@@ -18,12 +18,12 @@ export const Forms = ({history}) => {
   const questions = [
     {
       img: "https://scontent.fbkk8-4.fna.fbcdn.net/v/t1.15752-9/333301937_871057373967477_8401433292782439493_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHsjm292PVK_pdZbShZ9uPPbZcbuQhSahxtlxu5CFJqHCysEEOBJ4f3dOsm3jGtqnJjFlmDnGhm0Mcc28QjH91J&_nc_ohc=7DNxjiAjJb0AX-GkEE0&_nc_ht=scontent.fbkk8-4.fna&oh=03_AdQ_zh_jGBqqYnapDfARNZvhlkxcHVoylIcvM23iKFhQ_g&oe=64327257",
-      question: "เพศหญิง อายุมากกว่า 55ปี / เพศชายอายุมากกว่า 45ปี",
+      question: "เพศหญิง อายุมากกว่า 55 ปี / เพศชาย อายุมากกว่า 45 ปี",
       answer: "yes"
     },
     {
       img: "https://scontent.fbkk12-3.fna.fbcdn.net/v/t1.15752-9/334986462_739286384514196_6051614234258219856_n.webp?stp=dst-webp&_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEQwNnr8JaaSGjCozaS58n3O9ngGQ0GB1k72eAZDQYHWZfdZqq_4KC7kI-lfbgyAvY81xDqTuoOxDOflS2pHD_6&_nc_ohc=W52s1C2AYEkAX_spDOn&_nc_ht=scontent.fbkk12-3.fna&oh=03_AdQ9qD5I0YGfU7_r3GgP9L2FP71KEUEVDnhBlKpCJvJY5w&oe=643281F2",
-      question: "คุณสูบบุหรี่หรือได้รับควันบุหรี่อย่างต่อเนื่อง/เลิกบุหรี่ไม่เกิน 2ปี",
+      question: "คุณสูบบุหรี่หรือได้รับควันบุหรี่อย่างต่อเนื่อง/เลิกบุหรี่ไม่เกิน 2 ปี",
       answer: "yes"
     },
     {
@@ -43,7 +43,7 @@ export const Forms = ({history}) => {
     },
     {
       img: "https://scontent.fbkk12-4.fna.fbcdn.net/v/t1.15752-9/281344162_999156210741061_6036735971979908580_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeEqgikxFqi9ROOJA2XSrEeeqmONiNa1y5eqY42I1rXLl4b3JTkyP2FZXOLLEp6OyCfCCrBTkTAD-eY4e7MCYITk&_nc_ohc=LycIdG7tMdgAX_BDixW&_nc_ht=scontent.fbkk12-4.fna&oh=03_AdQtezsTI3FHYwStdrgiGUGZi0K_mSvSqTtKetHf3vcO6Q&oe=64329200",
-      question: "น้ำหนักเกินมาตรฐาน (ดรรชนีมวลกายมากกว่า 25 kg/m^2) อ้วนลงพุง รอบเอวมากกว่า ชาย 90ซม.(36 นิ้ว)/หญิง 80ซม. (32 นิ้ว)",
+      question: "น้ำหนักเกินมาตรฐาน (ดรรชนีมวลกายมากกว่า 25 kg/m^2) อ้วนลงพุง รอบเอวมากกว่า ชาย 90 ซม.(36 นิ้ว)/หญิง 80 ซม. (32 นิ้ว)",
       answer: "yes"
     },
     {
