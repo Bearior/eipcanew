@@ -117,10 +117,13 @@ const Signout = () => {
           โรคใหลตาย มีชื่อในภาษาอังกฤษคือ Sudden Unexpected Death Syndrome (SUDS) หรือถ้าแปลแบบตรงตัวก็คือ “การตายแบบเฉียบพลัน” ในทางการแพทย์จะเรียกภาวะนี้ว่า “ภาวะหัวใจล้มเหลวแบบเฉียบพลัน” 
           เป็นอีกหนึ่งโรคที่พบบ่อยโดยเฉพาะในแถบภาคอีสาน ความน่ากลัวของโรคนี้คือการเสียชีวิตแบบเฉียบพลัน สามารถเกิดได้ทั้งในขณะที่นอนหลับหรือตื่น โดยที่ผู้ตายไม่มีโอกาสรู้ตัวมาก่อน
           </p>
-          <img
-            src=""
+          <center>
+          <img class="mt-4 mb-5" style={{borderRadius: "10px"}}
+            src="https://i.pinimg.com/564x/88/4a/d1/884ad15843a2f7fc782c6631804f32a3.jpg"
             weight="70px"
           />
+          </center>
+
           
           <h2 className="mb-3">สาเหตุและปัจจัยเสี่ยงของโรคไหลตาย</h2>
           <div className="header10" /> <div className="header11" />
@@ -157,7 +160,9 @@ const Signout = () => {
 
           <br />
           <br />
-          <p className="mb-4">แหล้งอ้างอิง: HEART Hospital Bangkok Hospital </p>
+          <p style={{marginTop: '4%'}}>
+            <strong>ที่มา:</strong> nK - sleepcare <a style={{textDecoration: "none"}} href="https://www.nksleepcenter.com/snoring-and-suds/#:~:text=%E0%B8%AD%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%99%E0%B8%8A%E0%B8%99%E0%B8%B4%E0%B8%94,%E0%B9%80%E0%B8%89%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%99%20%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B8%95%E0%B8%B2%E0%B8%A2%E0%B9%84%E0%B8%94%E0%B9%89"> -การนอนกรนกับโรคใหลตาย-</a>
+            </p>
           
         </div>{" "}
         {/* end of col */}
@@ -168,6 +173,9 @@ const Signout = () => {
   </div>{" "}
   {/* end of ex-basic-1 */}
   {/* end of basic */}
+  <br />
+  <br />
+  <br />
   {/* Footer */}
   <div className="footer bg-gray">
     <div className="container">

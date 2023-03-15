@@ -112,8 +112,8 @@ const handleUpload = async () => {
       </Navbar.Collapse>
     </Container>
   </Navbar>
-
-  <header className="p-5 bg-gray mb-5">
+    <center>
+  <header className="p-5 bg-gray mb-5 my-5">
     <div className="container">
       <div className="row">
         <div className="col-xl-10 offset-xl-1">
@@ -126,7 +126,7 @@ const handleUpload = async () => {
     </div>{" "}
     {/* end of container */}
   </header>{" "}
-  
+  </center>
   <header id="header" className="">
     <div className="container ">
       <div className="row">

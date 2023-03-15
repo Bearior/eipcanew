@@ -154,7 +154,9 @@ const Signout = () => {
           </p>
             <br />
             <br />
-          <p className="mb-4">แหล้งอ้างอิง: HEART Hospital Bangkok Hospital </p>
+            <p style={{marginTop: '4%' , }}>
+            <strong>ที่มา:</strong>โรงพยาบาลหัวใจกรุงเทพ Bangkok HEART Hospital <a style={{textDecoration: "none"}} href="https://www.bangkokhearthospital.com/content/heart-attack-early-diagnosis-and-treatment-can-save-your-life"> -กล้ามเนื้อหัวใจขาดเลือดเฉียบพลัน รีบรักษาทัน โอกาสรอดสูง-</a>
+            </p>
           
         </div>{" "}
         {/* end of col */}
@@ -165,6 +167,9 @@ const Signout = () => {
   </div>{" "}
   {/* end of ex-basic-1 */}
   {/* end of basic */}
+  <br />
+  <br />
+  <br/>
   {/* Footer */}
   <div className="footer bg-gray">
     <div className="container">
