@@ -266,10 +266,10 @@ const Home = ({history}) => {
                 src={Logo2}
               />
               <h2  className="my-2">
-                แบบประเมิน และ การประมวลผล
+                เริ่มต้นการวัดความเสี่ยง
               </h2>
               <p>
-                สามารถกดเข้าไปเพื่อเริ่มทำแบบประเมินความเสี่ยงการเกิดโรคหัวใจ และอัพโหลดกราฟคลื่นไฟฟ้าหัวใจเพื่อให้ระบบปัญญาประดิษฐ์เริ่มประมวลผล{" "}
+                เข้าไปเพื่อเริ่มทำแบบประเมินความเสี่ยงการเกิดโรคหัวใจ และหลังจากนั้นท่านสามารถเลือกระบบของ EIPCA เพื่อเริ่มตรวจกราฟคลื่นไฟฟ้าหัวใจ{" "}
                 
               </p>
               </a>
@@ -292,7 +292,7 @@ const Home = ({history}) => {
             {/* end of job-container */}
             {/* end of job */}
             {/* Job */}
-            <div className="job-container">
+            {/* <div className="job-container">
               <a style={{textDecoration: "none"}} href="/Hardware">
               <img
                 className="img6"
@@ -306,7 +306,7 @@ const Home = ({history}) => {
                 
               </p>
               </a>
-            </div>{" "}
+            </div>{" "} */}
             {/* end of job-container */}
             {/* end of job */}
             {/* Job */}
@@ -450,7 +450,6 @@ const Home = ({history}) => {
   </div>
   </center>
   {/* end of job listing */}
-  {/* Footer */}
   <div className="footer bg-gray">
     <div className="container">
       <div className="row">
@@ -472,15 +471,15 @@ const Home = ({history}) => {
             <ul className="list-unstyled li-space-lg p-small">
               <p>
                 <i className="fa fa-map-marker-alt mr-2" />
-                The Prince Royal Collage, Thailand
+                EIPCA Team 
               </p>
               <p>
                 <i className="fa fa-phone-alt mr-2" />
-                0-5324-2038, 0-5324-2550
+                093-2789556 , 081-2895915 , 065-3595514
               </p>
               <p>
                 <i className="fa fa-envelope mr-2" />
-                prccontact@prc.ac.th
+                EIPCA@gmail.com
               </p>
             </ul>
           </div>{" "}
@@ -513,7 +512,7 @@ const Home = ({history}) => {
             <p className="p-small">
               We would love to hear from you{" "}
               <a href="">
-                <strong>prccontact@prc.ca.th</strong>
+                <strong>EIPCA@gmail.com</strong>
               </a>
             </p>
           </div>{" "}

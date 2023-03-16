@@ -57,11 +57,6 @@ const handleUpload = async () => {
   }
 };
 
-  const Backhome = () => {
-    history.push("/");
-    window.location.reload(true)
-  }
-
   const Signout = () => {
     app.auth().signOut();
     history.push("/");
@@ -135,7 +130,7 @@ const handleUpload = async () => {
               <h1 className="h1-large">
                 ตัวอย่างภาพที่ใช้ Upload <br />
               </h1>
-                <label for="formFileLg" class="form-label " style={{fontSize: "20px"}}>1. ภาพกราฟคลื่นไฟฟ้าหัวใจแบบ 12 lead <br></br>2. ภาพจำเป็นต้องเห็นครบทุก node ครบถ้วน ชัดเจน <br></br> 3. ภาพต้องเป็นแนวนอนขนาดอัตราส่วน <br/> ความกว้างต่อความยาวประมาณ 16 ต่อ 9</label>          
+                <label for="formFileLg" class="form-label " style={{fontSize: "20px"}}>1. ภาพกราฟคลื่นไฟฟ้าหัวใจแบบ 12 lead <br></br>2. ภาพจำเป็นต้องเห็นครบทุก node ครบถ้วน ชัดเจน <br></br> 3. ภาพต้องเป็นแนวนอนขนาดอัตราส่วน <br/> ความกว้างต่อความยาวประมาณ 16 ต่อ 9 </label>          
              </div>        
            </div>     
           <div className="col-lg-6 col-xl-7">
@@ -146,14 +141,19 @@ const handleUpload = async () => {
       </div>
     </div>
   </header>
-
+    <center>
+  <a  className="btn-solid-lg my-4" href="#upload">
+              ตรวจด้วย EIPCA
+  </a>
+    </center>
+    
  
   
 
   
 
-
-  <header className="p-4 bg-gray mb-5 " style={{marginTop: "10%"}}> 
+<div id="upload">
+  <header className="p-4 bg-gray mb-5 " style={{marginTop: "5%"}}> 
     <div className="container">
       <div className="row">
         <div className="col-xl-10 offset-xl-1">
@@ -189,6 +189,7 @@ const handleUpload = async () => {
       </div>
     </div>
   </header>
+</div>
 
 
   
@@ -222,15 +223,15 @@ const handleUpload = async () => {
             <ul className="list-unstyled li-space-lg p-small">
               <p>
                 <i className="fa fa-map-marker-alt mr-2" />
-                The Prince Royal Collage, Thailand
+                EIPCA Team 
               </p>
               <p>
                 <i className="fa fa-phone-alt mr-2" />
-                0-5324-2038, 0-5324-2550
+                093-2789556 , 081-2895915 , 065-3595514
               </p>
               <p>
                 <i className="fa fa-envelope mr-2" />
-                prccontact@prc.ac.th
+                EIPCA@gmail.com
               </p>
             </ul>
           </div>{" "}
@@ -263,7 +264,7 @@ const handleUpload = async () => {
             <p className="p-small">
               We would love to hear from you{" "}
               <a href="">
-                <strong>prccontact@prc.ca.th</strong>
+                <strong>EIPCA@gmail.com</strong>
               </a>
             </p>
           </div>{" "}

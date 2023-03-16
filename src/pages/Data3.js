@@ -170,7 +170,6 @@ const Signout = () => {
   <br />
   <br />
   <br/>
-  {/* Footer */}
   <div className="footer bg-gray">
     <div className="container">
       <div className="row">
@@ -192,15 +191,15 @@ const Signout = () => {
             <ul className="list-unstyled li-space-lg p-small">
               <p>
                 <i className="fa fa-map-marker-alt mr-2" />
-                The Prince Royal Collage, Thailand
+                EIPCA Team 
               </p>
               <p>
                 <i className="fa fa-phone-alt mr-2" />
-                0-5324-2038, 0-5324-2550
+                093-2789556 , 081-2895915 , 065-3595514
               </p>
               <p>
                 <i className="fa fa-envelope mr-2" />
-                prccontact@prc.ac.th
+                EIPCA@gmail.com
               </p>
             </ul>
           </div>{" "}
@@ -233,7 +232,7 @@ const Signout = () => {
             <p className="p-small">
               We would love to hear from you{" "}
               <a href="">
-                <strong>prccontact@prc.ca.th</strong>
+                <strong>EIPCA@gmail.com</strong>
               </a>
             </p>
           </div>{" "}

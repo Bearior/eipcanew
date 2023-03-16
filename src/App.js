@@ -27,6 +27,7 @@ import SuggestionBad from "./pages/SuggestionBad"
 import  Hospital from "./pages/Hospital"
 import HardwareHistory from "./pages/HardwareHistory"
 import HardwareManual from "./pages/HardwareManual"
+import Choose from "./pages/choose"
 
 
 function App() {
@@ -58,7 +59,7 @@ function App() {
           <Route exact path="/Hospital" component={Hospital}/>
           <Route exact path="/HardwareHistory" component={HardwareHistory}/>
           <Route exact path="/HardwareManual" component={HardwareManual}/>
-
+          <Route exact path="/Choose" component={Choose}/>
         </div>
       </Router>
     </AuthProvider>

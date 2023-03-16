@@ -25,10 +25,6 @@ const History = ({ history }) => {
       window.location.reload(true)
     };
 
-    const Refresh = () => {
-      window.location.reload();
-    }
-
     const links = document.querySelectorAll('.profile-info li a');
 
     links.forEach(link => {
@@ -40,18 +36,16 @@ const History = ({ history }) => {
         link.style.backgroundColor = '#4CAF50';
       });
     });
-    
-    
-    
-    
-    
-    
-    
 
-
+    console.log(currentUser.uid)
+    
+    
+    
+    
     
     useEffect(() => {
-      const unsubscribe = db.collection("EIPCA").where("userid", "==", currentUser.uid)
+    
+    const unsubscribe = db.collection("EIPCA").where("userid", "==", currentUser.uid)
     .onSnapshot((querySnapshot) => {
       let dataArray = [];
       querySnapshot.forEach((doc) => {
@@ -70,7 +64,7 @@ const History = ({ history }) => {
     });
     return unsubscribe;
   }, [db])
-    
+
   
     return(
         <>
@@ -118,6 +112,7 @@ const History = ({ history }) => {
       <div className="row">
         <div style={{ marginLeft: "30%"}} className="col-xl-10 offset-xl-1" >
           <h1 >ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</h1>
+          
 
         </div>{" "}
         {/* end of col */}
@@ -134,6 +129,7 @@ const History = ({ history }) => {
   <div className="sidenav">
               <center>
               <div class="mx-auto py-4 fs-1  mt-5">
+             
               
               <img style={{width: "20%", height: "20%"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  /><br></br>
               <h1>EIPCA ยินดีต้อนรับ</h1><br></br>
@@ -142,7 +138,16 @@ const History = ({ history }) => {
               </div>
               {/* <div class=" py-4 fs-1 fw-bold mt-5">ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</div> */}
               {/* <p>Please be patient for AI the Predicted the ECG graph</p> */}
+              {/* {Formstatus ? (
+                <p>คุณทำแบบประเมินแล้ว</p>
+                ) : (
+                <p>คุณยังไม่ได้ทำแบบประเมิน</p>
+                )} */}
               <img style={{width: "80%", borderRadius: "10px"}}src={Logo2}></img>
+                
+              <button className="btn-solid-lg my-3" onClick={(e)=> {e.preventDefault(); window.location.href="/HardwareHistory"}}>
+                ประวัตการวัดค่าด้วยอุปกรณ์
+              </button>
               </center>
   </div>
   </center>
@@ -160,6 +165,8 @@ const History = ({ history }) => {
                 History = {item.History}
               />
               ))}
+        
+
              
             </ul>
           
@@ -170,19 +177,167 @@ const History = ({ history }) => {
     );
   };
 
-const Frame = ({ Results, Status, Time, File, History}) => {
+const Frame = ({ Results, Status, Time, File }) => {
   const [isDataShown, setIsDataShown] = useState(false);
+  const [Formstatus, setFormstatus] = useState("");
+  const db = app.firestore();
+  const { currentUser } = useContext(AuthContext);
+  let ResultRisk;
+
+  useEffect (() => {
+    const documentRef = db.collection('EIPCAFORM').doc(currentUser.uid);
+    documentRef.get().then((doc) => {
+      if (doc.exists) {
+        let formstatusArray = [];
+        formstatusArray.push(doc.data());
+        const myStringValue = formstatusArray[0].Form_Result;
+        setFormstatus(myStringValue);
+      } else {
+        console.log("No such document!");
+      }
+    }).catch((error) => {
+      console.log("Error getting document:", error);
+    });
+  })
 
 
   const toggleData = () => {
     setIsDataShown(!isDataShown);
   };
-   
 
+
+  if (Formstatus === "High_Risk" && Results === "Brugada syndrome") {
+    ResultRisk = "High";
+  } else if (Formstatus === "Medium_Risk" && Results === "Brugada syndrome") {
+    ResultRisk = "High";
+  } else if (Formstatus === "High_Risk" && Results === "Normal") {
+    ResultRisk = "Low";
+  } else if (Formstatus === "Medium_Risk" && Results === "Normal") {
+    ResultRisk = "Low";
+  } else if (Formstatus === "Low_Risk" && Results === "Brugada syndrome") {
+    ResultRisk = "Medium";
+  } else if (Formstatus === "No_Risk" && Results === "Brugada syndrome") {
+    ResultRisk = "Medium";
+  } else if (Formstatus === "Low_Risk" && Results === "Normal") {
+    ResultRisk = "None";
+  } else if (Formstatus === "No_Risk" && Results === "Normal") {
+    ResultRisk = "None";
+  }
+
+  let ResultInput;
+  if (ResultRisk === "High") {
+    ResultInput = 
+    <div>
+    <h5 clasName="my-2" style={{color: "red"}}>คุณมีความเสี่ยงสูงที่จะมีภาวะผิดปกติเกี่ยวกับหัวใจ โปรดอ่านข้อแนะนำ</h5>
+     <img
+      className="img-fluid img-thumbnail mx-5"
+      style={{
+      borderColor: "Red",
+      borderWidth: "5px",
+      maxHeight: "40%",
+      maxWidth: "40%"
+       }}
+        src={File}
+        alt="Image from data"
+        />
+      <img className="img-fluid img-thumbnail "  style={{
+            maxHeight: "40%",
+            maxWidth: "40%"
+              }}
+            src="https://ecgwaves.com/wp-content/uploads/2017/03/brugada-syndrome-ecg-criteria-characteristics-brugadas-type-1-2-3.jpg"/>
+      <br/>
+      <br/>
+      <a  className="btn-solid-lg page-scroll mx-5 " href="/SuggestionBad">
+      ข้อแนะนำ
+      </a>
+      <a  className="btn-solid-lg page-scroll " href="/SuggestionHospital">
+      ค้นหาโรงพยาบาล
+      </a>
+      </div>
+  } else if (ResultRisk === "Medium") {
+    ResultInput = 
+    <div>
+    <h5 clasName="my-2" style={{color: "Darkorange"}}>คุณมีความเสี่ยงปานกลางที่จะมีภาวะผิดปกติเกี่ยวกับหัวใจ โปรดอ่านข้อแนะนำ</h5>
+     <img
+      className="img-fluid img-thumbnail mx-5"
+      style={{
+      borderColor: "Red",
+      borderWidth: "5px",
+      maxHeight: "40%",
+      maxWidth: "40%"
+       }}
+        src={File}
+        alt="Image from data"
+        />
+      <img className="img-fluid img-thumbnail "  style={{
+            maxHeight: "40%",
+            maxWidth: "40%"
+              }}
+            src="https://ecgwaves.com/wp-content/uploads/2017/03/brugada-syndrome-ecg-criteria-characteristics-brugadas-type-1-2-3.jpg"/>
+      <br/>
+      <br/>
+      <a  className="btn-solid-lg page-scroll mx-5 " href="/SuggestionBad">
+      ข้อแนะนำ
+      </a>
+      <a  className="btn-solid-lg page-scroll " href="/SuggestionHospital">
+      ค้นหาโรงพยาบาล
+      </a>
+      </div>
+  } else if (ResultRisk === "Low") {
+    ResultInput = 
+    <div>
+    <h5 clasName="my-2" style={{color: "DarkGreen"}}>คุณมีความเสี่ยงต่ำที่จะมีภาวะผิดปกติเกี่ยวกับหัวใจ โปรดอ่านข้อแนะนำ</h5>
+     <img
+      className="img-fluid img-thumbnail mx-5"
+      style={{
+      borderColor: "Red",
+      borderWidth: "5px",
+      maxHeight: "40%",
+      maxWidth: "40%"
+       }}
+        src={File}
+        alt="Image from data"
+        />
+      <img className="img-fluid img-thumbnail "  style={{
+            maxHeight: "40%",
+            maxWidth: "40%"
+              }}
+            src="https://ecgwaves.com/wp-content/uploads/2017/03/brugada-syndrome-ecg-criteria-characteristics-brugadas-type-1-2-3.jpg"/>
+      <br/>
+      <br/>
+      <a  className="btn-solid-lg page-scroll mx-5 " href="/SuggestionBad">
+      ข้อแนะนำ
+      </a>
+      <a  className="btn-solid-lg page-scroll " href="/SuggestionHospital">
+      ค้นหาโรงพยาบาล
+      </a>
+      </div>
+  } else if (ResultRisk === "None") {
+    ResultInput = 
+    <div>
+            <h5 clasName="my-2" style={{color: "green"}}>คุณไม่มีความเสี่ยงเกี่ยวกับหัวใจ</h5>
+        <img
+          className="img-fluid img-thumbnail"
+          style={{
+          borderColor: "Green",
+          borderWidth: "10px",
+          maxHeight: "40%",
+          maxWidth: "40%"
+        }}
+        src={File}
+        alt="Image from data"
+      />
+      <br/>
+      <br/>
+       <a  className="btn-solid-lg page-scroll " href="/SuggestionHealthy">
+      ข้อแนะนำ
+      </a>
+      </div>
+  }
+ 
     return(
       
     <p>
-      
     {Status === "NotPredict" && (
       <p className="bg-warning py-3 fs-5" style={{ marginLeft: "15%"}} >
         <div className="fw-bold">Date&Time : {Time}</div> <br />
@@ -208,56 +363,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
   {isDataShown && Status === "Predicted" && (
     <div className="py-3 fs-5" style={{backgroundColor: "", marginLeft:"15%"}}>
       <h2>ผลการตรวจสอบ</h2>
-        {Results === "Normal" ? (
-          <div>
-            <h5 clasName="my-2" style={{color: "green"}}>คุณไม่มีความเสี่ยง</h5>
-        <img
-          className="img-fluid img-thumbnail"
-          style={{
-          borderColor: "Green",
-          borderWidth: "10px",
-          maxHeight: "40%",
-          maxWidth: "40%"
-        }}
-        src={File}
-        alt="Image from data"
-      />
-      <br/>
-      <br/>
-       <a  className="btn-solid-lg page-scroll " href="/SuggestionHealthy">
-      ข้อแนะนำ
-      </a>
-      </div>
-      
-    ) : (
-      <div>
-        <h5 clasName="my-2" style={{color: "red"}}>คุณมีความเสี่ยง โปรดอ่านข้อแนะนำ</h5>
-         <img
-          className="img-fluid img-thumbnail mx-5"
-          style={{
-          borderColor: "Red",
-          borderWidth: "5px",
-          maxHeight: "40%",
-          maxWidth: "40%"
-           }}
-            src={File}
-            alt="Image from data"
-            />
-          <img className="img-fluid img-thumbnail "  style={{
-                maxHeight: "40%",
-                maxWidth: "40%"
-                  }}
-                src="https://ecgwaves.com/wp-content/uploads/2017/03/brugada-syndrome-ecg-criteria-characteristics-brugadas-type-1-2-3.jpg"/>
-          <br/>
-          <br/>
-          <a  className="btn-solid-lg page-scroll mx-5 " href="/SuggestionBad">
-          ข้อแนะนำ
-          </a>
-          <a  className="btn-solid-lg page-scroll " href="/SuggestionHospital">
-          ค้นหาโรงพยาบาล
-          </a>
-          </div>
-    )}
+        <div>{ResultInput}</div>
     <br/>
     <br/>
    

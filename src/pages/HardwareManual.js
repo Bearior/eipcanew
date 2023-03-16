@@ -97,14 +97,14 @@ if (currentStep === 1) {
     </Container>
   </Navbar>
 
-    <div style={{marginTop: "100px", position: "fixed"}}>
+    {/* <div style={{marginTop: "100px", position: "fixed"}}>
       <button className="btn-solid-lg" onClick={handlestep2}>
         Previous Step
       </button>
       <button className="btn-solid-lg" onClick={handlestep1}>
         Next Step
       </button>
-    </div>
+    </div> */}
       
     <section id="step1" >
        {/* Header */}
@@ -112,7 +112,7 @@ if (currentStep === 1) {
     <div className="container">
       <div className="row">
         <div className="col-xl-10 offset-xl-1">
-          <h1>อุปกรณ์</h1>
+          <h1>ขั้นตอนการใช้อุปกรณ์ EIPCA</h1>
         </div>{" "}
         {/* end of col */}
       </div>{" "}
@@ -122,12 +122,59 @@ if (currentStep === 1) {
   </header>{" "}
   {/* end of ex-header */}
   {/* end of header */}
+
     </section>
-    
-    <section id="step2" style={{marginTop: "20%"}}>Section test</section>
-    <section id="step3" style={{marginTop: "20%"}}>Section test</section>
-    <section id="step4" style={{marginTop: "20%"}}>Section test</section>
-    <section id="step5" style={{marginTop: "20%"}}>Section test</section>
+    <div id="section1">
+      <center>
+      <img style={{width: "20%" , borderRadius: "10px" , marginTop: "20px"}} class="my-5"
+                  className="img6"
+                  src={Logo2}
+      /><br/>
+      
+      <button className="btn-solid-lg my-2" onClick={(e)=> {e.preventDefault(); window.location.href="#section1"}}>
+        Next Step
+      </button>
+      
+      </center>
+    </div>
+    <br/><br/><br/><br/>
+    <div id="section2">
+      <center>
+      <img style={{width: "20%" , borderRadius: "10px"}} class="my-5 mb-2"
+                  className="img6"
+                  src={Logo2}
+      />
+      <br/>
+      <button className="btn-solid-lg mx-1 my-2" onClick={(e)=> {e.preventDefault(); window.location.href="#section1"}}>
+        Previous Step
+      </button>
+      <button className="btn-solid-lg" onClick={(e)=> {e.preventDefault(); window.location.href="#section2"}}>
+        Next Step
+      </button>
+      
+      </center>
+    </div>
+    <br/><br/><br/><br/>
+    <div id="section3">
+      <center>
+      <img style={{width: "20%" , borderRadius: "10px"}} 
+                  className="img6"
+                  src={Logo2}
+      /><br/>
+      <button className="btn-solid-lg mx-1 my-2" onClick={(e)=> {e.preventDefault(); window.location.href="#section2"}}>
+        Previous Step
+      </button>
+      <button className="btn-solid-lg" onClick={(e)=> {e.preventDefault(); window.location.href="#section3"}}>
+        Next Step
+      </button>
+      
+      </center>
+    </div>
+    <center>
+    <a className="btn-solid-lgr mx-1 my-2" href="/HardwareHistory" >
+        เริ่มการตรวจด้วยอุปกรณ์ EIPCA
+      </a>
+    </center>
    </>
   );
 };
