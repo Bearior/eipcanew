@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Logo from "../images/logo text.png" 
 
 
-const SuggestionHospital = ({history}) => {
+const SuggestionHospital2 = ({history}) => {
   const { currentUser } = useContext(AuthContext);
   const [file, setFile] = useState(null);
   const [base64, setBase64] = useState(null);
@@ -344,7 +344,7 @@ const SuggestionHospital = ({history}) => {
             </li>
 
           <li className="nav-item">
-            <a className= "mx-3" href="/History">
+            <a className= "mx-3" href="/HardwareHistory">
               <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
           </a>
           </li>
@@ -361,10 +361,7 @@ const SuggestionHospital = ({history}) => {
     <div className="container">
       <div className="row">
         <div className="col-xl-10 offset-xl-1">
-        <h1 >การตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</h1>
-          <h2 className="mt-4">คุณ {currentUser.displayName} </h2>
-          <p class="fs-2" style={{marginTop: "4%"}}>ผลการตรวจคลื่นไฟฟ้าหัวใจของคุณอยู่ในเกณฑ์</p>
-          <p class="fs-1" style={{color: "red", marginTop: "40px"}}>อันตราย</p>
+        <h1 >ค้นหาโรงพยาบาลศูนย์หัวใจใกล้คุณ</h1>
         </div>{" "}
         {/* end of col */}
       </div>{" "}
@@ -537,4 +534,4 @@ const SuggestionHospital = ({history}) => {
   );
 };
 
-export default withRouter(SuggestionHospital);
+export default withRouter(SuggestionHospital2);

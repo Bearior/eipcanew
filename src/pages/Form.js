@@ -40,25 +40,25 @@ export const Forms = ({history}) => {
   let Text;
   if (Formstatus == "No_Risk"){
     SkipBtn = 
-    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Choose">
+    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Hardware">
        ข้ามแบบประเมิน
     </a>
     Text =  "หากท่านทราบผลประเมินภายใน 6 เดือนแล้วให้กดข้ามการทำแบบประเมิน"
   } else if (Formstatus == "Low_Risk") {
     SkipBtn = 
-    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Choose">
+    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Hardware">
        ข้ามแบบประเมิน
     </a>
     Text = "หากท่านทราบผลประเมินภายใน 6 เดือนแล้วให้กดข้ามการทำแบบประเมิน"
   } else if (Formstatus == "Medium_Risk") {
     SkipBtn = 
-    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Choose">
+    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Hardware">
        ข้ามแบบประเมิน
     </a>
     Text = "หากท่านทราบผลประเมินภายใน 6 เดือนแล้วให้กดข้ามการทำแบบประเมิน"
   } else if (Formstatus == "High_Risk") {
     SkipBtn = 
-    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Choose">
+    <a className="btn-solid-lgr " style={{marginLeft: "70%"}} href="/Hardware">
        ข้ามแบบประเมิน
     </a>
     Text ="หากท่านทราบผลประเมินภายใน 6 เดือนแล้วให้กดข้ามการทำแบบประเมิน"
@@ -216,21 +216,6 @@ export const Forms = ({history}) => {
                   <div className="col-lg-12">
                     {/* Job */}
                     <div className="job-container">
-                      <a style={{textDecoration: "none"}} href="/upload">
-                      <img
-                        className="img6"
-                        src={Logo2}
-                      />
-                      <h2  className="my-2">
-                        ตรวจภาพคลื่นไฟฟ้าหัวใจด้วย EIPCA
-                      </h2>
-                      <p>
-                        ระบบ "EIPCA" ปัญญาประดิษฐ์ที่ช่วยประเมินความเสี่ยงการเกิด Brugada Syndrom เพื่อประกอบการตัดสินใจการไปพบแพทย์{" "}
-                        
-                      </p>
-                      </a>
-                    </div>{" "}
-                    <div className="job-container">
                       <a style={{textDecoration: "none"}} href="/Hardware">
                       <img
                         className="img6"
@@ -336,7 +321,7 @@ export const Forms = ({history}) => {
             </li>
 
           <li className="nav-item">
-            <a className= "mx-3" href="/History">
+            <a className= "mx-3" href="/HardwareHistory">
               <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
           </a>
           </li>

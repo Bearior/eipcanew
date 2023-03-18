@@ -94,21 +94,6 @@ const Choose = ({history}) => {
                   <div className="col-lg-12">
                     {/* Job */}
                     <div className="job-container">
-                      <a style={{textDecoration: "none"}} href="/upload">
-                      <img
-                        className="img6"
-                        src={Logo2}
-                      />
-                      <h2  className="my-2">
-                        ตรวจภาพคลื่นไฟฟ้าหัวใจด้วย EIPCA
-                      </h2>
-                      <p>
-                        ระบบ "EIPCA" ปัญญาประดิษฐ์ที่ช่วยประเมินความเสี่ยงการเกิด Brugada Syndrom เพื่อประกอบการตัดสินใจการไปพบแพทย์{" "}
-                        
-                      </p>
-                      </a>
-                    </div>{" "}
-                    <div className="job-container">
                       <a style={{textDecoration: "none"}} href="/Hardware">
                       <img
                         className="img6"

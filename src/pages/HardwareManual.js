@@ -86,7 +86,7 @@ if (currentStep === 1) {
             </li>
 
           <li className="nav-item">
-            <a className= "mx-3" href="/History">
+            <a className= "mx-3" href="/HardwareHistory">
               <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
           </a>
           </li>
@@ -132,7 +132,7 @@ if (currentStep === 1) {
       /><br/>
       
       <button className="btn-solid-lg my-2" onClick={(e)=> {e.preventDefault(); window.location.href="#section1"}}>
-        Next Step
+        ถัดไป
       </button>
       
       </center>
@@ -146,10 +146,10 @@ if (currentStep === 1) {
       />
       <br/>
       <button className="btn-solid-lg mx-1 my-2" onClick={(e)=> {e.preventDefault(); window.location.href="#section1"}}>
-        Previous Step
+        ก่อนหน้า
       </button>
       <button className="btn-solid-lg" onClick={(e)=> {e.preventDefault(); window.location.href="#section2"}}>
-        Next Step
+        ถัดไป
       </button>
       
       </center>
@@ -162,17 +162,17 @@ if (currentStep === 1) {
                   src={Logo2}
       /><br/>
       <button className="btn-solid-lg mx-1 my-2" onClick={(e)=> {e.preventDefault(); window.location.href="#section2"}}>
-        Previous Step
+        ก่อนหน้า
       </button>
       <button className="btn-solid-lg" onClick={(e)=> {e.preventDefault(); window.location.href="#section3"}}>
-        Next Step
+        ถัดไป
       </button>
       
       </center>
     </div>
     <center>
     <a className="btn-solid-lgr mx-1 my-2" href="/HardwareHistory" >
-        เริ่มการตรวจด้วยอุปกรณ์ EIPCA
+        ตรวจประวัติการตรวจด้วยอุปกรณ์ EIPCA
       </a>
     </center>
    </>

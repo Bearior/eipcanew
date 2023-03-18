@@ -102,7 +102,7 @@ const HardwareHistory = ({ history }) => {
             </li>
 
           <li className="nav-item">
-            <a className= "mx-3" href="/History">
+            <a className= "mx-3" href="/HardwareHistory">
               <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
           </a>
           </li>

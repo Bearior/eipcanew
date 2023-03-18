@@ -74,7 +74,7 @@ const Home = ({history}) => {
             </li>
 
           <li className="nav-item">
-            <a className= "mx-3" href="/History">
+            <a className= "mx-3" href="/HardwareHistory">
               <img style={{width: "40px", height: "40px"}} src= "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"  />
           </a>
           </li>
@@ -274,21 +274,19 @@ const Home = ({history}) => {
               </p>
               </a>
             </div>{" "}
-            {/* <div className="job-container " >
-              <a style={{textDecoration: "none"}} href="/Brugada">
+            <div className="job-container " >
+              <a style={{textDecoration: "none"}} href="/SuggestionHospital2">
               <img
                 className="img6"
                 src={Logo2}
               />
-              <h2 className="my-2">Brugada Syndrom</h2>
+              <h2 className="my-2">ค้นหาโรงพยาบาลศูนย์หัวใจใกล้คุณ</h2>
               <p>
-              กลุ่มอาการ
-              Brugada (brew-GAH-dah) เป็นภาวะหัวใจเต้นผิดจังหวะ (arrhythmia)
-              ที่หาได้ยากแต่อาจเป็นอันตรายถึงชีวิต{" "}
+              คุณสามารถค้นหาโรงพยาบาลที่ได้รับการรับรองเป็นศูนย์หัวใจ ในแต่ละภาคที่จังหวัดคุณอยู่ได้ใเมนูนี้
                 
               </p>
               </a>
-            </div>{" "} */}
+            </div>{" "}
             {/* end of job-container */}
             {/* end of job */}
             {/* Job */}

@@ -28,6 +28,7 @@ import  Hospital from "./pages/Hospital"
 import HardwareHistory from "./pages/HardwareHistory"
 import HardwareManual from "./pages/HardwareManual"
 import Choose from "./pages/choose"
+import SuggestionHospital2 from "./pages/SuggestionHospital2"
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/Quiz" component={Quiz}/>
           <Route exact path="/SuggestionHealthy" component={SuggestionHealthy}/>
           <Route exact path="/SuggestionHospital" component={SuggestionHospital}/>
+          <Route exact path="/SuggestionHospital2" component={SuggestionHospital2}/>
           <Route exact path="/SuggestionBad" component={SuggestionBad}/>
           <Route exact path="/Hospital" component={Hospital}/>
           <Route exact path="/HardwareHistory" component={HardwareHistory}/>
