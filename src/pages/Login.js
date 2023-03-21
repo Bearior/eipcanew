@@ -3,6 +3,7 @@ import { withRouter, Redirect } from "react-router";
 import app from "../base.js";
 import { AuthContext } from "../Auth.js";
 import Logo from "../Asset/Logo.png"
+import bg from "../Asset/LoginBG.jpg"
 import "../loginpage.css"
 
 const Login = ({ history }) => {
@@ -34,7 +35,7 @@ const Login = ({ history }) => {
     <section className="body">
     <div className="container">
       <div className="login-box" style={{ 
-      backgroundImage: `url("https://scontent.fcnx4-1.fna.fbcdn.net/v/t1.15752-9/329758599_492293062869763_2318090481097364156_n.png?_nc_cat=101&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeHIqF5b1F2tzw19oRSRhHDtNx87Cd1H2y43HzsJ3UfbLhwVcqeDNCs95kGkpe-rrfBb5kWjBCnHONfXmsgvE_Oy&_nc_ohc=ZoTZ6pyGeX8AX8uuCBB&_nc_ht=scontent.fcnx4-1.fna&oh=03_AdS9fF0aWtDYDKRas_C6VfAISYq_sN4TRH6MFHYDdXqkkw&oe=64088066")` 
+      backgroundImage: bg 
         }}>
 
         <div className="row">
