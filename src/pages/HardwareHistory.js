@@ -54,13 +54,15 @@ const HardwareHistory = ({ history }) => {
       querySnapshot.forEach((doc) => {
         dataArray.push(doc.data());
         dataArray.sort((lhs, rhs) => {
-          if(lhs.Time !== rhs.Time){
+          if (lhs.status === "Notplotted" && rhs.status !== "Notplotted") {
+            return -1;
+          } else if (lhs.status !== "Notplotted" && rhs.status === "Notplotted") {
+            return 1;
+          } else if (lhs.Time !== rhs.Time) {
             return ((lhs.Time < rhs.Time) - 0.5) * 2;
-          } else if(lhs.status !== rhs.status){
-            return ((lhs.status > rhs.status) - 0.5) * 2;
           }
           return 0;
-        })
+        });        
 
       });
       setData(dataArray);
