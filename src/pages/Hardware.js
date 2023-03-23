@@ -262,7 +262,7 @@ const Hardware = ({history}) => {
 
 
   <center>
-  <a  className="btn-solid-lg page-scroll " href="/HardwareManual">
+  <a  className="btn-solid-lg page-scroll " href="/HardwareHistory">
               เริ่มการตรวจด้วยอุปกรณ์
   </a>
   </center>
