@@ -11,7 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Logo2 from "../images/logo pic.png"
+
 
 
 const HardwareHistory = ({ history }) => {
@@ -143,7 +143,7 @@ const HardwareHistory = ({ history }) => {
               </div>
               {/* <div class=" py-4 fs-1 fw-bold mt-5">ประวัติการตรวจวัดค่า กราฟคลื่นไฟฟ้าหัวใจ</div> */}
               {/* <p>Please be patient for AI the Predicted the ECG graph</p> */}
-              <img style={{width: "80%", borderRadius: "10px"}}src={Logo2}></img>
+              <img style={{width: "80%", borderRadius: "10px"}}src={Logo}></img>
               <div class="form-group col-sm-8 col-form-label mb-2">
                 <label for="exampleInputEmail1" class="form-label">Input Serial Number</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder = "Input serial number" aria-describedby="emailHelp" maxlength="4"
@@ -230,7 +230,7 @@ const Frame = ({ Results, Status, Time, File, History}) => {
   let ResultInput;
   if (ResultRisk === "High") {
     ResultInput = 
-    <div>
+    <div >
     <h5 clasName="my-2" style={{color: "red"}}>คุณมีความเสี่ยงสูงที่จะมีภาวะผิดปกติเกี่ยวกับหัวใจ โปรดอ่านข้อแนะนำ</h5>
      <img
       className="img-fluid img-thumbnail mx-5"
